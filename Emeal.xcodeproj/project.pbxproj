@@ -13,6 +13,8 @@
 		393DD8711ABAD6F90024E5B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8701ABAD6F90024E5B4 /* Images.xcassets */; };
 		393DD8741ABAD6F90024E5B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */; };
 		393DD8801ABAD6F90024E5B4 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */; };
+		393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8891ABAD96E0024E5B4 /* Colors.swift */; };
+		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		393DD8791ABAD6F90024E5B4 /* EmealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		393DD87E1ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealTests.swift; sourceTree = "<group>"; };
+		393DD8891ABAD96E0024E5B4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */,
+				393DD8891ABAD96E0024E5B4 /* Colors.swift */,
+				393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */,
 				393DD86B1ABAD6F90024E5B4 /* ViewController.swift */,
 				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				393DD86C1ABAD6F90024E5B4 /* ViewController.swift in Sources */,
+				393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */,
 				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,
+				393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Emeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Emeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
