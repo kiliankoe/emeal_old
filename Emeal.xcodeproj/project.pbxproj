@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */; };
-		393DD86C1ABAD6F90024E5B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD86B1ABAD6F90024E5B4 /* ViewController.swift */; };
+		393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */; };
 		393DD86F1ABAD6F90024E5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393DD86D1ABAD6F90024E5B4 /* Main.storyboard */; };
 		393DD8711ABAD6F90024E5B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8701ABAD6F90024E5B4 /* Images.xcassets */; };
 		393DD8741ABAD6F90024E5B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */; };
 		393DD8801ABAD6F90024E5B4 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */; };
 		393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8891ABAD96E0024E5B4 /* Colors.swift */; };
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
+		39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTableViewController.swift */; };
+		39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,7 @@
 		393DD8641ABAD6F90024E5B4 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393DD8681ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		393DD86B1ABAD6F90024E5B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealCardViewController.swift; sourceTree = "<group>"; };
 		393DD86E1ABAD6F90024E5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		393DD8701ABAD6F90024E5B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		393DD8731ABAD6F90024E5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealTests.swift; sourceTree = "<group>"; };
 		393DD8891ABAD96E0024E5B4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		39725A961ABC8EAA00432706 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,9 @@
 				393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */,
 				393DD8891ABAD96E0024E5B4 /* Colors.swift */,
 				393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */,
-				393DD86B1ABAD6F90024E5B4 /* ViewController.swift */,
+				393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */,
+				39725A961ABC8EAA00432706 /* MenuTableViewController.swift */,
+				39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */,
 				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
 				393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */,
@@ -218,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393DD86C1ABAD6F90024E5B4 /* ViewController.swift in Sources */,
+				393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */,
 				393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */,
+				39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */,
+				39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */,
 				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,
 				393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */,
 			);

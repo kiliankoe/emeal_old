@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EmealCardViewController.swift
 //  Emeal
 //
 //  Created by Kilian Költzsch on 19/03/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EmealCardViewController: UIViewController {
 
 	@IBOutlet weak var mainLabel: UILabel!
 	@IBOutlet weak var secondaryLabel: UILabel!
