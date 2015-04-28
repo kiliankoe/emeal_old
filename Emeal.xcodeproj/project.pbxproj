@@ -17,7 +17,7 @@
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
 		39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTableViewController.swift */; };
 		39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */; };
-		97E2DF4DF2E18CCBE0C9F4D3 /* libPods-Emeal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */; };
+		9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.debug.xcconfig"; sourceTree = "<group>"; };
 		393DD8641ABAD6F90024E5B4 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393DD8681ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		39725A961ABC8EAA00432706 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
-		4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Emeal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97E2DF4DF2E18CCBE0C9F4D3 /* libPods-Emeal.a in Frameworks */,
+				9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		0B9353C282A9FB0EBEB82F4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */,
+				2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +162,7 @@
 				393DD8611ABAD6F90024E5B4 /* Frameworks */,
 				393DD8621ABAD6F90024E5B4 /* Resources */,
 				537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */,
+				AC27902D4E863A4148445B2A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +277,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC27902D4E863A4148445B2A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emeal/Pods-Emeal-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
