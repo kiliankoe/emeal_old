@@ -18,6 +18,10 @@ class MenuTableViewController: UITableViewController {
 		var backgroundLayer = colors.gl
 		backgroundLayer.frame = view.frame
 		view.layer.insertSublayer(backgroundLayer, atIndex: 0)
+
+		let markup = "<p><b>Mensa Mensa mjam mjam mjam!</b></p>"
+		let document = HTMLDocument(string: markup)
+		println(document.firstNodeMatchingSelector("b").textContent)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,15 +42,5 @@ class MenuTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return 0
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
 }

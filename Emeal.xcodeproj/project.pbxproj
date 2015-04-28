@@ -17,6 +17,7 @@
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
 		39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTableViewController.swift */; };
 		39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */; };
+		97E2DF4DF2E18CCBE0C9F4D3 /* libPods-Emeal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.debug.xcconfig"; sourceTree = "<group>"; };
 		393DD8641ABAD6F90024E5B4 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393DD8681ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,9 @@
 		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		39725A961ABC8EAA00432706 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
+		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
+		4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Emeal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E2DF4DF2E18CCBE0C9F4D3 /* libPods-Emeal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B9353C282A9FB0EBEB82F4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FE8F1532CF4B5DE8C2CB42E /* libPods-Emeal.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		393DD85B1ABAD6F90024E5B4 = {
 			isa = PBXGroup;
 			children = (
 				393DD8661ABAD6F90024E5B4 /* Emeal */,
 				393DD87C1ABAD6F90024E5B4 /* EmealTests */,
 				393DD8651ABAD6F90024E5B4 /* Products */,
+				D5E6076B6D65A55E5E97B94A /* Pods */,
+				0B9353C282A9FB0EBEB82F4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +111,7 @@
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
 				393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */,
 				393DD8671ABAD6F90024E5B4 /* Supporting Files */,
+				39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */,
 			);
 			path = Emeal;
 			sourceTree = "<group>";
@@ -124,6 +141,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D5E6076B6D65A55E5E97B94A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */,
+				5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 393DD8831ABAD6F90024E5B4 /* Build configuration list for PBXNativeTarget "Emeal" */;
 			buildPhases = (
+				99B5797C8C95EF22B1CBB769 /* Check Pods Manifest.lock */,
 				393DD8601ABAD6F90024E5B4 /* Sources */,
 				393DD8611ABAD6F90024E5B4 /* Frameworks */,
 				393DD8621ABAD6F90024E5B4 /* Resources */,
+				537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +246,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emeal/Pods-Emeal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99B5797C8C95EF22B1CBB769 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		393DD8601ABAD6F90024E5B4 /* Sources */ = {
@@ -356,23 +417,40 @@
 		};
 		393DD8841ABAD6F90024E5B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		393DD8851ABAD6F90024E5B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
 			};
 			name = Release;
 		};
