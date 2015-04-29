@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39011B331AF0D77C0051E887 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011B321AF0D77C0051E887 /* Constants.swift */; };
+		39011B391AF0FBEA0051E887 /* MenuDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */; };
 		393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */; };
 		393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */; };
 		393DD86F1ABAD6F90024E5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393DD86D1ABAD6F90024E5B4 /* Main.storyboard */; };
@@ -15,7 +17,7 @@
 		393DD8801ABAD6F90024E5B4 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */; };
 		393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8891ABAD96E0024E5B4 /* Colors.swift */; };
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
-		39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTableViewController.swift */; };
+		39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTVC.swift */; };
 		39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */; };
 		9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.debug.xcconfig"; sourceTree = "<group>"; };
+		39011B321AF0D77C0051E887 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataTypes.swift; sourceTree = "<group>"; };
 		393DD8641ABAD6F90024E5B4 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393DD8681ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +49,7 @@
 		393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealTests.swift; sourceTree = "<group>"; };
 		393DD8891ABAD96E0024E5B4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		39725A961ABC8EAA00432706 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		39725A961ABC8EAA00432706 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
 		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,10 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */,
+				39011B321AF0D77C0051E887 /* Constants.swift */,
 				393DD8891ABAD96E0024E5B4 /* Colors.swift */,
 				393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */,
 				393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */,
-				39725A961ABC8EAA00432706 /* MenuTableViewController.swift */,
+				39F171611AF11A8500ADCEEA /* Menu */,
 				39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */,
 				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
@@ -139,6 +144,15 @@
 				393DD87E1ABAD6F90024E5B4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39F171611AF11A8500ADCEEA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				39725A961ABC8EAA00432706 /* MenuTVC.swift */,
+				39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		D5E6076B6D65A55E5E97B94A /* Pods */ = {
@@ -304,9 +318,11 @@
 				393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */,
 				393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */,
 				39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */,
-				39725A971ABC8EAA00432706 /* MenuTableViewController.swift in Sources */,
+				39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */,
+				39011B331AF0D77C0051E887 /* Constants.swift in Sources */,
 				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,
 				393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */,
+				39011B391AF0FBEA0051E887 /* MenuDataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

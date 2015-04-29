@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import HTMLReader
 
-class MenuTableViewController: UITableViewController {
+class MenuTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
