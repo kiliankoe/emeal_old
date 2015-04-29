@@ -99,7 +99,7 @@
         <!--Transactions-->
         <scene sceneID="8e7-Fp-LG4">
             <objects>
-                <tableViewController id="upZ-rL-HRt" userLabel="Transactions" customClass="TransactionsTableViewController" customModule="Emeal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="upZ-rL-HRt" userLabel="Transactions" customClass="TransactionsTVC" customModule="Emeal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oHS-vh-W6f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

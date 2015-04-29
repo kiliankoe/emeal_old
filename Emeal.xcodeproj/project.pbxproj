@@ -18,7 +18,7 @@
 		393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8891ABAD96E0024E5B4 /* Colors.swift */; };
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
 		39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTVC.swift */; };
-		39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */; };
+		39725A991ABC8EFF00432706 /* TransactionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTVC.swift */; };
 		9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		393DD8891ABAD96E0024E5B4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		39725A961ABC8EAA00432706 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
-		39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
+		39725A981ABC8EFF00432706 /* TransactionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTVC.swift; sourceTree = "<group>"; };
 		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
 		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 				393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */,
 				393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */,
 				39F171611AF11A8500ADCEEA /* Menu */,
-				39725A981ABC8EFF00432706 /* TransactionsTableViewController.swift */,
+				39725A981ABC8EFF00432706 /* TransactionsTVC.swift */,
 				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
 				393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */,
@@ -317,7 +317,7 @@
 			files = (
 				393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */,
 				393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */,
-				39725A991ABC8EFF00432706 /* TransactionsTableViewController.swift in Sources */,
+				39725A991ABC8EFF00432706 /* TransactionsTVC.swift in Sources */,
 				39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */,
 				39011B331AF0D77C0051E887 /* Constants.swift in Sources */,
 				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,

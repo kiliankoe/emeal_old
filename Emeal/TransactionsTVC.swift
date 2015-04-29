@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionsTableViewController: UITableViewController {
+class TransactionsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
