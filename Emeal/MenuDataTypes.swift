@@ -15,13 +15,13 @@ struct Menu {
 
 struct Meal {
 	let name: String!
-	let price: Double!
+	let price: (Double, Double)!
 	let ingredients: [Ingredient]!
 }
 
 enum Ingredient {
 	case Alcohol
-	case Meat
+	case Vegetarian
 	case Pork
 	case Beef
 	case Garlic
