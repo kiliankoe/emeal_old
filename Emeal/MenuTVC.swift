@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import HTMLReader
 
 class MenuTVC: UITableViewController {
 
@@ -21,9 +19,9 @@ class MenuTVC: UITableViewController {
 		backgroundLayer.frame = view.frame
 		view.layer.insertSublayer(backgroundLayer, atIndex: 0)
 
-		let markup = "<p><b>Mensa Mensa mjam mjam mjam!</b></p>"
-		let document = HTMLDocument(string: markup)
-		println(document.firstNodeMatchingSelector("b").textContent)
+		DataController.getMensaMenu { (htmlString) -> () in
+			println(DataController.parseMensenList(htmlString))
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,4 +43,5 @@ class MenuTVC: UITableViewController {
         return 0
     }
 
+	
 }
