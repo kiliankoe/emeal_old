@@ -19,6 +19,9 @@
 		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
 		39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTVC.swift */; };
 		39725A991ABC8EFF00432706 /* TransactionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTVC.swift */; };
+		39CCD7EE1B1B20130096BE80 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */; };
+		39DF372E1B1B7659009E2953 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF372C1B1B7659009E2953 /* Fabric.framework */; };
+		39DF372F1B1B7659009E2953 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF372D1B1B7659009E2953 /* Crashlytics.framework */; };
 		39F171631AF11CA500ADCEEA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F171621AF11CA500ADCEEA /* DataController.swift */; };
 		9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		39725A961ABC8EAA00432706 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		39725A981ABC8EFF00432706 /* TransactionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTVC.swift; sourceTree = "<group>"; };
 		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
+		39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
+		39DF372C1B1B7659009E2953 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		39DF372D1B1B7659009E2953 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		39F171621AF11CA500ADCEEA /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */,
+				39DF372F1B1B7659009E2953 /* Crashlytics.framework in Frameworks */,
+				39DF372E1B1B7659009E2953 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +87,8 @@
 		0B9353C282A9FB0EBEB82F4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39DF372C1B1B7659009E2953 /* Fabric.framework */,
+				39DF372D1B1B7659009E2953 /* Crashlytics.framework */,
 				2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */,
 			);
 			name = Frameworks;
@@ -114,6 +124,7 @@
 				393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */,
 				39F171611AF11A8500ADCEEA /* Menu */,
 				39725A981ABC8EFF00432706 /* TransactionsTVC.swift */,
+				39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */,
 				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
 				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
 				393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */,
@@ -180,6 +191,8 @@
 				393DD8621ABAD6F90024E5B4 /* Resources */,
 				537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */,
 				AC27902D4E863A4148445B2A /* Embed Pods Frameworks */,
+				39EC744C1B1B52C400C8E9C6 /* Increment Build Number */,
+				39DF372B1B1B7636009E2953 /* Authenticate Fabric */,
 			);
 			buildRules = (
 			);
@@ -219,6 +232,7 @@
 				TargetAttributes = {
 					393DD8631ABAD6F90024E5B4 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = HU85FER47E;
 					};
 					393DD8781ABAD6F90024E5B4 = {
 						CreatedOnToolsVersion = 6.3;
@@ -266,6 +280,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39DF372B1B1B7636009E2953 /* Authenticate Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Authenticate Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run a73c412e3cdf6638dff0bb09b90292655ab3eecd 7899bb8bd32e08f690b8d3b6bb215ea4010ad734af9516ad408a25025c942313";
+		};
+		39EC744C1B1B52C400C8E9C6 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
 		537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +368,7 @@
 				39011B331AF0D77C0051E887 /* Constants.swift in Sources */,
 				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,
 				393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */,
+				39CCD7EE1B1B20130096BE80 /* SettingsTVC.swift in Sources */,
 				39011B391AF0FBEA0051E887 /* MenuDataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,15 +500,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -477,15 +524,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
 			};
 			name = Release;
