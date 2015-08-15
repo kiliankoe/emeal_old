@@ -2,13 +2,11 @@
 //  AppDelegate.swift
 //  Emeal
 //
-//  Created by Kilian Költzsch on 19/03/15.
-//  Copyright (c) 2015 kilian.io. All rights reserved.
+//  Created by Kilian Költzsch on 15/08/15.
+//  Copyright © 2015 Kilian Koeltzsch. All rights reserved.
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		Fabric.with([Crashlytics()])
-
-		UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
-
+		// Override point for customization after application launch.
 		return true
 	}
 

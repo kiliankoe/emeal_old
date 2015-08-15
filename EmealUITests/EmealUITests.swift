@@ -1,19 +1,24 @@
 //
-//  EmealTests.swift
-//  EmealTests
+//  EmealUITests.swift
+//  EmealUITests
 //
 //  Created by Kilian Költzsch on 15/08/15.
 //  Copyright © 2015 Kilian Koeltzsch. All rights reserved.
 //
 
 import XCTest
-@testable import Emeal
 
-class EmealTests: XCTestCase {
-    
+class EmealUITests: XCTestCase {
+        
     override func setUp() {
         super.setUp()
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        // In UI tests it is usually best to stop immediately when a failure occurs.
+        continueAfterFailure = false
+        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        XCUIApplication().launch()
     }
     
     override func tearDown() {
@@ -22,15 +27,8 @@ class EmealTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
+        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }

@@ -7,74 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39011B331AF0D77C0051E887 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011B321AF0D77C0051E887 /* Constants.swift */; };
-		39011B391AF0FBEA0051E887 /* MenuDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */; };
-		393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */; };
-		393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */; };
-		393DD86F1ABAD6F90024E5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393DD86D1ABAD6F90024E5B4 /* Main.storyboard */; };
-		393DD8711ABAD6F90024E5B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8701ABAD6F90024E5B4 /* Images.xcassets */; };
-		393DD8741ABAD6F90024E5B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */; };
-		393DD8801ABAD6F90024E5B4 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */; };
-		393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD8891ABAD96E0024E5B4 /* Colors.swift */; };
-		393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */; };
-		39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A961ABC8EAA00432706 /* MenuTVC.swift */; };
-		39725A991ABC8EFF00432706 /* TransactionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39725A981ABC8EFF00432706 /* TransactionsTVC.swift */; };
-		39CCD7EE1B1B20130096BE80 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */; };
-		39DF372E1B1B7659009E2953 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF372C1B1B7659009E2953 /* Fabric.framework */; };
-		39DF372F1B1B7659009E2953 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF372D1B1B7659009E2953 /* Crashlytics.framework */; };
-		39F171631AF11CA500ADCEEA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F171621AF11CA500ADCEEA /* DataController.swift */; };
-		9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */; };
+		3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */; };
+		3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */; };
+		3958DFD11B7FBD6F00B1E6A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */; };
+		3958DFD31B7FBD6F00B1E6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */; };
+		3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */; };
+		3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */; };
+		3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		393DD87A1ABAD6F90024E5B4 /* PBXContainerItemProxy */ = {
+		3958DFDD1B7FBD6F00B1E6A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 393DD85C1ABAD6F90024E5B4 /* Project object */;
+			containerPortal = 3958DFBE1B7FBD6F00B1E6A1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 393DD8631ABAD6F90024E5B4;
+			remoteGlobalIDString = 3958DFC51B7FBD6F00B1E6A1;
+			remoteInfo = Emeal;
+		};
+		3958DFE81B7FBD6F00B1E6A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3958DFBE1B7FBD6F00B1E6A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3958DFC51B7FBD6F00B1E6A1;
 			remoteInfo = Emeal;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.debug.xcconfig"; sourceTree = "<group>"; };
-		39011B321AF0D77C0051E887 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataTypes.swift; sourceTree = "<group>"; };
-		393DD8641ABAD6F90024E5B4 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		393DD8681ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealCardViewController.swift; sourceTree = "<group>"; };
-		393DD86E1ABAD6F90024E5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		393DD8701ABAD6F90024E5B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		393DD8731ABAD6F90024E5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		393DD8791ABAD6F90024E5B4 /* EmealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		393DD87E1ABAD6F90024E5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealTests.swift; sourceTree = "<group>"; };
-		393DD8891ABAD96E0024E5B4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		39725A961ABC8EAA00432706 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
-		39725A981ABC8EFF00432706 /* TransactionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTVC.swift; sourceTree = "<group>"; };
-		39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emeal-Bridging-Header.h"; sourceTree = "<group>"; };
-		39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
-		39DF372C1B1B7659009E2953 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		39DF372D1B1B7659009E2953 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		39F171621AF11CA500ADCEEA /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emeal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emeal/Pods-Emeal.release.xcconfig"; sourceTree = "<group>"; };
+		3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		3958DFD01B7FBD6F00B1E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3958DFD51B7FBD6F00B1E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3958DFD71B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3958DFDC1B7FBD6F00B1E6A1 /* EmealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealTests.swift; sourceTree = "<group>"; };
+		3958DFE21B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealUITests.swift; sourceTree = "<group>"; };
+		3958DFED1B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		393DD8611ABAD6F90024E5B4 /* Frameworks */ = {
+		3958DFC31B7FBD6F00B1E6A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB2B0585A664D6C9D311731 /* Pods_Emeal.framework in Frameworks */,
-				39DF372F1B1B7659009E2953 /* Crashlytics.framework in Frameworks */,
-				39DF372E1B1B7659009E2953 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		393DD8761ABAD6F90024E5B4 /* Frameworks */ = {
+		3958DFD91B7FBD6F00B1E6A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3958DFE41B7FBD6F00B1E6A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,115 +76,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B9353C282A9FB0EBEB82F4F /* Frameworks */ = {
+		3958DFBD1B7FBD6F00B1E6A1 = {
 			isa = PBXGroup;
 			children = (
-				39DF372C1B1B7659009E2953 /* Fabric.framework */,
-				39DF372D1B1B7659009E2953 /* Crashlytics.framework */,
-				2F2FC23649A260CC43102F66 /* Pods_Emeal.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		393DD85B1ABAD6F90024E5B4 = {
-			isa = PBXGroup;
-			children = (
-				393DD8661ABAD6F90024E5B4 /* Emeal */,
-				393DD87C1ABAD6F90024E5B4 /* EmealTests */,
-				393DD8651ABAD6F90024E5B4 /* Products */,
-				D5E6076B6D65A55E5E97B94A /* Pods */,
-				0B9353C282A9FB0EBEB82F4F /* Frameworks */,
+				3958DFC81B7FBD6F00B1E6A1 /* Emeal */,
+				3958DFDF1B7FBD6F00B1E6A1 /* EmealTests */,
+				3958DFEA1B7FBD6F00B1E6A1 /* EmealUITests */,
+				3958DFC71B7FBD6F00B1E6A1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		393DD8651ABAD6F90024E5B4 /* Products */ = {
+		3958DFC71B7FBD6F00B1E6A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				393DD8641ABAD6F90024E5B4 /* Emeal.app */,
-				393DD8791ABAD6F90024E5B4 /* EmealTests.xctest */,
+				3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */,
+				3958DFDC1B7FBD6F00B1E6A1 /* EmealTests.xctest */,
+				3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		393DD8661ABAD6F90024E5B4 /* Emeal */ = {
+		3958DFC81B7FBD6F00B1E6A1 /* Emeal */ = {
 			isa = PBXGroup;
 			children = (
-				393DD8691ABAD6F90024E5B4 /* AppDelegate.swift */,
-				39011B321AF0D77C0051E887 /* Constants.swift */,
-				393DD8891ABAD96E0024E5B4 /* Colors.swift */,
-				393DD88B1ABAD9860024E5B4 /* UIColorExtension.swift */,
-				393DD86B1ABAD6F90024E5B4 /* EmealCardViewController.swift */,
-				39F171611AF11A8500ADCEEA /* Menu */,
-				39725A981ABC8EFF00432706 /* TransactionsTVC.swift */,
-				39CCD7ED1B1B20130096BE80 /* SettingsTVC.swift */,
-				393DD86D1ABAD6F90024E5B4 /* Main.storyboard */,
-				393DD8701ABAD6F90024E5B4 /* Images.xcassets */,
-				393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */,
-				393DD8671ABAD6F90024E5B4 /* Supporting Files */,
-				39829AC11AEFD7E200534F5F /* Emeal-Bridging-Header.h */,
+				3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */,
+				3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */,
+				3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */,
+				3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */,
+				3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */,
+				3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */,
+				3958DFD71B7FBD6F00B1E6A1 /* Info.plist */,
 			);
 			path = Emeal;
 			sourceTree = "<group>";
 		};
-		393DD8671ABAD6F90024E5B4 /* Supporting Files */ = {
+		3958DFDF1B7FBD6F00B1E6A1 /* EmealTests */ = {
 			isa = PBXGroup;
 			children = (
-				393DD8681ABAD6F90024E5B4 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		393DD87C1ABAD6F90024E5B4 /* EmealTests */ = {
-			isa = PBXGroup;
-			children = (
-				393DD87F1ABAD6F90024E5B4 /* EmealTests.swift */,
-				393DD87D1ABAD6F90024E5B4 /* Supporting Files */,
+				3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */,
+				3958DFE21B7FBD6F00B1E6A1 /* Info.plist */,
 			);
 			path = EmealTests;
 			sourceTree = "<group>";
 		};
-		393DD87D1ABAD6F90024E5B4 /* Supporting Files */ = {
+		3958DFEA1B7FBD6F00B1E6A1 /* EmealUITests */ = {
 			isa = PBXGroup;
 			children = (
-				393DD87E1ABAD6F90024E5B4 /* Info.plist */,
+				3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */,
+				3958DFED1B7FBD6F00B1E6A1 /* Info.plist */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		39F171611AF11A8500ADCEEA /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				39725A961ABC8EAA00432706 /* MenuTVC.swift */,
-				39F171621AF11CA500ADCEEA /* DataController.swift */,
-				39011B381AF0FBEA0051E887 /* MenuDataTypes.swift */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
-		D5E6076B6D65A55E5E97B94A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */,
-				5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */,
-			);
-			name = Pods;
+			path = EmealUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		393DD8631ABAD6F90024E5B4 /* Emeal */ = {
+		3958DFC51B7FBD6F00B1E6A1 /* Emeal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 393DD8831ABAD6F90024E5B4 /* Build configuration list for PBXNativeTarget "Emeal" */;
+			buildConfigurationList = 3958DFF01B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "Emeal" */;
 			buildPhases = (
-				99B5797C8C95EF22B1CBB769 /* Check Pods Manifest.lock */,
-				393DD8601ABAD6F90024E5B4 /* Sources */,
-				393DD8611ABAD6F90024E5B4 /* Frameworks */,
-				393DD8621ABAD6F90024E5B4 /* Resources */,
-				537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */,
-				AC27902D4E863A4148445B2A /* Embed Pods Frameworks */,
-				39EC744C1B1B52C400C8E9C6 /* Increment Build Number */,
-				39DF372B1B1B7636009E2953 /* Authenticate Fabric */,
+				3958DFC21B7FBD6F00B1E6A1 /* Sources */,
+				3958DFC31B7FBD6F00B1E6A1 /* Frameworks */,
+				3958DFC41B7FBD6F00B1E6A1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -200,47 +145,68 @@
 			);
 			name = Emeal;
 			productName = Emeal;
-			productReference = 393DD8641ABAD6F90024E5B4 /* Emeal.app */;
+			productReference = 3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		393DD8781ABAD6F90024E5B4 /* EmealTests */ = {
+		3958DFDB1B7FBD6F00B1E6A1 /* EmealTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 393DD8861ABAD6F90024E5B4 /* Build configuration list for PBXNativeTarget "EmealTests" */;
+			buildConfigurationList = 3958DFF31B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealTests" */;
 			buildPhases = (
-				393DD8751ABAD6F90024E5B4 /* Sources */,
-				393DD8761ABAD6F90024E5B4 /* Frameworks */,
-				393DD8771ABAD6F90024E5B4 /* Resources */,
+				3958DFD81B7FBD6F00B1E6A1 /* Sources */,
+				3958DFD91B7FBD6F00B1E6A1 /* Frameworks */,
+				3958DFDA1B7FBD6F00B1E6A1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				393DD87B1ABAD6F90024E5B4 /* PBXTargetDependency */,
+				3958DFDE1B7FBD6F00B1E6A1 /* PBXTargetDependency */,
 			);
 			name = EmealTests;
 			productName = EmealTests;
-			productReference = 393DD8791ABAD6F90024E5B4 /* EmealTests.xctest */;
+			productReference = 3958DFDC1B7FBD6F00B1E6A1 /* EmealTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3958DFE61B7FBD6F00B1E6A1 /* EmealUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3958DFF61B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealUITests" */;
+			buildPhases = (
+				3958DFE31B7FBD6F00B1E6A1 /* Sources */,
+				3958DFE41B7FBD6F00B1E6A1 /* Frameworks */,
+				3958DFE51B7FBD6F00B1E6A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3958DFE91B7FBD6F00B1E6A1 /* PBXTargetDependency */,
+			);
+			name = EmealUITests;
+			productName = EmealUITests;
+			productReference = 3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		393DD85C1ABAD6F90024E5B4 /* Project object */ = {
+		3958DFBE1B7FBD6F00B1E6A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = kilian.io;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Kilian Koeltzsch";
 				TargetAttributes = {
-					393DD8631ABAD6F90024E5B4 = {
-						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = HU85FER47E;
+					3958DFC51B7FBD6F00B1E6A1 = {
+						CreatedOnToolsVersion = 7.0;
 					};
-					393DD8781ABAD6F90024E5B4 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 393DD8631ABAD6F90024E5B4;
+					3958DFDB1B7FBD6F00B1E6A1 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 3958DFC51B7FBD6F00B1E6A1;
+					};
+					3958DFE61B7FBD6F00B1E6A1 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 3958DFC51B7FBD6F00B1E6A1;
 					};
 				};
 			};
-			buildConfigurationList = 393DD85F1ABAD6F90024E5B4 /* Build configuration list for PBXProject "Emeal" */;
+			buildConfigurationList = 3958DFC11B7FBD6F00B1E6A1 /* Build configuration list for PBXProject "Emeal" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -248,29 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 393DD85B1ABAD6F90024E5B4;
-			productRefGroup = 393DD8651ABAD6F90024E5B4 /* Products */;
+			mainGroup = 3958DFBD1B7FBD6F00B1E6A1;
+			productRefGroup = 3958DFC71B7FBD6F00B1E6A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				393DD8631ABAD6F90024E5B4 /* Emeal */,
-				393DD8781ABAD6F90024E5B4 /* EmealTests */,
+				3958DFC51B7FBD6F00B1E6A1 /* Emeal */,
+				3958DFDB1B7FBD6F00B1E6A1 /* EmealTests */,
+				3958DFE61B7FBD6F00B1E6A1 /* EmealUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		393DD8621ABAD6F90024E5B4 /* Resources */ = {
+		3958DFC41B7FBD6F00B1E6A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393DD86F1ABAD6F90024E5B4 /* Main.storyboard in Resources */,
-				393DD8741ABAD6F90024E5B4 /* LaunchScreen.xib in Resources */,
-				393DD8711ABAD6F90024E5B4 /* Images.xcassets in Resources */,
+				3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */,
+				3958DFD31B7FBD6F00B1E6A1 /* Assets.xcassets in Resources */,
+				3958DFD11B7FBD6F00B1E6A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		393DD8771ABAD6F90024E5B4 /* Resources */ = {
+		3958DFDA1B7FBD6F00B1E6A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3958DFE51B7FBD6F00B1E6A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,139 +253,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		39DF372B1B1B7636009E2953 /* Authenticate Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Authenticate Fabric";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run a73c412e3cdf6638dff0bb09b90292655ab3eecd 7899bb8bd32e08f690b8d3b6bb215ea4010ad734af9516ad408a25025c942313";
-		};
-		39EC744C1B1B52C400C8E9C6 /* Increment Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Increment Build Number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
-		};
-		537A8CF77BDEA4FA94B74F3D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emeal/Pods-Emeal-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99B5797C8C95EF22B1CBB769 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AC27902D4E863A4148445B2A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Emeal/Pods-Emeal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		393DD8601ABAD6F90024E5B4 /* Sources */ = {
+		3958DFC21B7FBD6F00B1E6A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393DD86C1ABAD6F90024E5B4 /* EmealCardViewController.swift in Sources */,
-				393DD88A1ABAD96E0024E5B4 /* Colors.swift in Sources */,
-				39725A991ABC8EFF00432706 /* TransactionsTVC.swift in Sources */,
-				39725A971ABC8EAA00432706 /* MenuTVC.swift in Sources */,
-				39F171631AF11CA500ADCEEA /* DataController.swift in Sources */,
-				39011B331AF0D77C0051E887 /* Constants.swift in Sources */,
-				393DD86A1ABAD6F90024E5B4 /* AppDelegate.swift in Sources */,
-				393DD88C1ABAD9860024E5B4 /* UIColorExtension.swift in Sources */,
-				39CCD7EE1B1B20130096BE80 /* SettingsTVC.swift in Sources */,
-				39011B391AF0FBEA0051E887 /* MenuDataTypes.swift in Sources */,
+				3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */,
+				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
+				3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		393DD8751ABAD6F90024E5B4 /* Sources */ = {
+		3958DFD81B7FBD6F00B1E6A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393DD8801ABAD6F90024E5B4 /* EmealTests.swift in Sources */,
+				3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3958DFE31B7FBD6F00B1E6A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		393DD87B1ABAD6F90024E5B4 /* PBXTargetDependency */ = {
+		3958DFDE1B7FBD6F00B1E6A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 393DD8631ABAD6F90024E5B4 /* Emeal */;
-			targetProxy = 393DD87A1ABAD6F90024E5B4 /* PBXContainerItemProxy */;
+			target = 3958DFC51B7FBD6F00B1E6A1 /* Emeal */;
+			targetProxy = 3958DFDD1B7FBD6F00B1E6A1 /* PBXContainerItemProxy */;
+		};
+		3958DFE91B7FBD6F00B1E6A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3958DFC51B7FBD6F00B1E6A1 /* Emeal */;
+			targetProxy = 3958DFE81B7FBD6F00B1E6A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		393DD86D1ABAD6F90024E5B4 /* Main.storyboard */ = {
+		3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				393DD86E1ABAD6F90024E5B4 /* Base */,
+				3958DFD01B7FBD6F00B1E6A1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		393DD8721ABAD6F90024E5B4 /* LaunchScreen.xib */ = {
+		3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				393DD8731ABAD6F90024E5B4 /* Base */,
+				3958DFD51B7FBD6F00B1E6A1 /* Base */,
 			);
-			name = LaunchScreen.xib;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		393DD8811ABAD6F90024E5B4 /* Debug */ = {
+		3958DFEE1B7FBD6F00B1E6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,8 +334,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -440,23 +345,21 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		393DD8821ABAD6F90024E5B4 /* Release */ = {
+		3958DFEF1B7FBD6F00B1E6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -486,126 +389,120 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		393DD8841ABAD6F90024E5B4 /* Debug */ = {
+		3958DFF11B7FBD6F00B1E6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 339219F1128F0E48E47D82CB /* Pods-Emeal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Emeal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		393DD8851ABAD6F90024E5B4 /* Release */ = {
+		3958DFF21B7FBD6F00B1E6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2FECDD854CE692C6AE3485 /* Pods-Emeal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Emeal/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Emeal/Emeal-Bridging-Header.h";
 			};
 			name = Release;
 		};
-		393DD8871ABAD6F90024E5B4 /* Debug */ = {
+		3958DFF41B7FBD6F00B1E6A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = EmealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.EmealTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emeal.app/Emeal";
 			};
 			name = Debug;
 		};
-		393DD8881ABAD6F90024E5B4 /* Release */ = {
+		3958DFF51B7FBD6F00B1E6A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = EmealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.EmealTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emeal.app/Emeal";
+			};
+			name = Release;
+		};
+		3958DFF71B7FBD6F00B1E6A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmealUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.EmealUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Emeal;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		3958DFF81B7FBD6F00B1E6A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmealUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.EmealUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Emeal;
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		393DD85F1ABAD6F90024E5B4 /* Build configuration list for PBXProject "Emeal" */ = {
+		3958DFC11B7FBD6F00B1E6A1 /* Build configuration list for PBXProject "Emeal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				393DD8811ABAD6F90024E5B4 /* Debug */,
-				393DD8821ABAD6F90024E5B4 /* Release */,
+				3958DFEE1B7FBD6F00B1E6A1 /* Debug */,
+				3958DFEF1B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		393DD8831ABAD6F90024E5B4 /* Build configuration list for PBXNativeTarget "Emeal" */ = {
+		3958DFF01B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "Emeal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				393DD8841ABAD6F90024E5B4 /* Debug */,
-				393DD8851ABAD6F90024E5B4 /* Release */,
+				3958DFF11B7FBD6F00B1E6A1 /* Debug */,
+				3958DFF21B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		393DD8861ABAD6F90024E5B4 /* Build configuration list for PBXNativeTarget "EmealTests" */ = {
+		3958DFF31B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				393DD8871ABAD6F90024E5B4 /* Debug */,
-				393DD8881ABAD6F90024E5B4 /* Release */,
+				3958DFF41B7FBD6F00B1E6A1 /* Debug */,
+				3958DFF51B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		3958DFF61B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3958DFF71B7FBD6F00B1E6A1 /* Debug */,
+				3958DFF81B7FBD6F00B1E6A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 393DD85C1ABAD6F90024E5B4 /* Project object */;
+	rootObject = 3958DFBE1B7FBD6F00B1E6A1 /* Project object */;
 }
