@@ -18,6 +18,8 @@
 		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
 		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
+		39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */; };
+		39CD15E01B813AC60065A7CA /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD15DF1B813AC60065A7CA /* DataTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
 		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		39CD15DF1B813AC60065A7CA /* DataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */,
+				39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,7 @@
 		3958DFBD1B7FBD6F00B1E6A1 = {
 			isa = PBXGroup;
 			children = (
+				39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */,
 				39C89EB11B801E5700518AB0 /* Alamofire.framework */,
 				3958DFC81B7FBD6F00B1E6A1 /* Emeal */,
 				3958DFDF1B7FBD6F00B1E6A1 /* EmealTests */,
@@ -122,6 +128,7 @@
 			children = (
 				3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */,
 				39A73F6A1B8002F5003F561E /* Server */,
+				39CD15DF1B813AC60065A7CA /* DataTypes.swift */,
 				3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */,
 				3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */,
 				3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */,
@@ -294,6 +301,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -313,6 +321,7 @@
 				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
 				3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */,
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
+				39CD15E01B813AC60065A7CA /* DataTypes.swift in Sources */,
 				3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
