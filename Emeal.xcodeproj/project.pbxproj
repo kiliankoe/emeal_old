@@ -15,6 +15,9 @@
 		3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */; };
 		3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */; };
 		3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */; };
+		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
+		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
+		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		39A73F711B801534003F561E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,9 @@
 		3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealUITests.swift; sourceTree = "<group>"; };
 		3958DFED1B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
+		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
+		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +99,7 @@
 		3958DFBD1B7FBD6F00B1E6A1 = {
 			isa = PBXGroup;
 			children = (
+				39C89EB11B801E5700518AB0 /* Alamofire.framework */,
 				3958DFC81B7FBD6F00B1E6A1 /* Emeal */,
 				3958DFDF1B7FBD6F00B1E6A1 /* EmealTests */,
 				3958DFEA1B7FBD6F00B1E6A1 /* EmealUITests */,
@@ -100,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */,
+				39A73F6A1B8002F5003F561E /* Server */,
 				3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */,
 				3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */,
 				3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */,
@@ -128,6 +150,15 @@
 			path = EmealUITests;
 			sourceTree = "<group>";
 		};
+		39A73F6A1B8002F5003F561E /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				39A73F681B8001F8003F561E /* OpenMensa.swift */,
+				39A73F6B1B80036C003F561E /* Kartenservice.swift */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +169,8 @@
 				3958DFC21B7FBD6F00B1E6A1 /* Sources */,
 				3958DFC31B7FBD6F00B1E6A1 /* Frameworks */,
 				3958DFC41B7FBD6F00B1E6A1 /* Resources */,
+				39A73F6D1B8014C4003F561E /* Carthage */,
+				39A73F711B801534003F561E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,11 +286,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39A73F6D1B8014C4003F561E /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3958DFC21B7FBD6F00B1E6A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */,
+				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
 				3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */,
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
 				3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */,
@@ -400,6 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
@@ -411,6 +468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Emeal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
@@ -485,6 +546,7 @@
 				3958DFF21B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3958DFF31B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +555,7 @@
 				3958DFF51B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3958DFF61B7FBD6F00B1E6A1 /* Build configuration list for PBXNativeTarget "EmealUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +564,7 @@
 				3958DFF81B7FBD6F00B1E6A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
