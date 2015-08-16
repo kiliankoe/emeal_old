@@ -14,7 +14,15 @@ class FirstViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
-		let ks = Kartenservice(user: "foo", password: "bar")
+//		let ks = Kartenservice(user: "foo", password: "bar")
+
+//		OpenMensa.canteens { (canteens) -> () in
+//			print(canteens)
+//		}
+
+		OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
+			print(meals)
+		}
 	}
 
 	override func didReceiveMemoryWarning() {
