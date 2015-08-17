@@ -19,6 +19,11 @@ func omMealsURL(id: Int, forDate date: NSDate) -> NSURL {
 	dateFormatter.dateFormat = "yyyy-MM-dd"
 	return NSURL(string: "canteens/\(id)/days/\(dateFormatter.stringFromDate(date))/meals", relativeToURL: omBaseURL)!
 }
+func omDaysURL(id: Int, forDate date: NSDate) -> NSURL {
+	let dateFormatter = NSDateFormatter()
+	dateFormatter.dateFormat = "yyyy-MM-dd"
+	return NSURL(string: "canteens/\(id)/days/\(dateFormatter.stringFromDate(date))", relativeToURL: omBaseURL)!
+}
 
 // MARK: -
 
@@ -50,6 +55,16 @@ class OpenMensa {
 					meals.append(meal)
 				}
 				completion(meals)
+			}
+		}
+	}
+
+	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (Bool) -> ()) {
+		Alamofire.request(.GET, omDaysURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
+			if let jsonData = result.value {
+				let json = JSON(jsonData)
+
+				completion(json["closed"].boolValue)
 			}
 		}
 	}

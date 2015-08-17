@@ -20,8 +20,12 @@ class FirstViewController: UIViewController {
 //			print(canteens)
 //		}
 
-		OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
-			print(meals)
+//		OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
+//			print(meals)
+//		}
+
+		OpenMensa.isClosed(canteenID: 79, forDate: NSDate()) { (isClosed) -> () in
+			print(isClosed)
 		}
 	}
 
