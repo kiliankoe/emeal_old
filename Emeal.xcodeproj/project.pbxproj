@@ -15,6 +15,7 @@
 		3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */; };
 		3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */; };
 		3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */; };
+		39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B111B81CDCC00AAB4E4 /* Array+combine.swift */; };
 		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
 		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
@@ -67,6 +68,7 @@
 		3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealUITests.swift; sourceTree = "<group>"; };
 		3958DFED1B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39987B111B81CDCC00AAB4E4 /* Array+combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+combine.swift"; sourceTree = "<group>"; };
 		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
 		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */,
 				3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */,
 				3958DFD71B7FBD6F00B1E6A1 /* Info.plist */,
+				39987B131B81CE0800AAB4E4 /* Helpers */,
 			);
 			path = Emeal;
 			sourceTree = "<group>";
@@ -155,6 +158,14 @@
 				3958DFED1B7FBD6F00B1E6A1 /* Info.plist */,
 			);
 			path = EmealUITests;
+			sourceTree = "<group>";
+		};
+		39987B131B81CE0800AAB4E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				39987B111B81CDCC00AAB4E4 /* Array+combine.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		39A73F6A1B8002F5003F561E /* Server */ = {
@@ -317,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */,
 				39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */,
 				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
 				3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */,

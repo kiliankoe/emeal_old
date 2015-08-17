@@ -10,6 +10,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum OpenMensaError: ErrorType {
+	case Request
+	case Server
+	case InvalidID
+}
+
 // MARK: - URLs
 
 let omBaseURL = NSURL(string: "https://openmensa.org/api/v2/")!
@@ -27,11 +33,11 @@ func omDaysURL(id: Int, forDate date: NSDate) -> NSURL {
 
 // MARK: -
 
-let supportedMensaIDs = "78,79,80,81,82,83,84,85,86,87,88,89,90,91,92"
+let supportedMensaIDs = [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]
 
 class OpenMensa {
-	static func canteens(completion: ([Canteen]) -> ()) {
-		Alamofire.request(.GET, omCanteensURL, parameters: ["ids": supportedMensaIDs]).responseJSON { (req, res, result) -> Void in
+	static func canteens(completion completion: ([Canteen]) -> ()) throws {
+		Alamofire.request(Method.GET, omCanteensURL, parameters: ["ids": supportedMensaIDs.combine(",")]).responseJSON { (req, res, result) -> Void in
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
 
@@ -44,7 +50,9 @@ class OpenMensa {
 		}
 	}
 
-	static func meals(canteenID id: Int, forDate date: NSDate, completion: ([Meal]) -> ()) {
+	static func meals(canteenID id: Int, forDate date: NSDate, completion: ([Meal]) -> ()) throws {
+		guard supportedMensaIDs.contains(id) else { throw OpenMensaError.InvalidID }
+
 		Alamofire.request(.GET, omMealsURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
@@ -59,7 +67,7 @@ class OpenMensa {
 		}
 	}
 
-	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (Bool) -> ()) {
+	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (Bool) -> ()) throws {
 		Alamofire.request(.GET, omDaysURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
