@@ -35,7 +35,7 @@ var authCookie: String? {
 }
 
 class Kartenservice {
-	static func login(user: String, password: String) throws {
+	static func login(user: String, password: String, completion: () -> ()) throws {
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
@@ -48,6 +48,7 @@ class Kartenservice {
 			if let cookie = res?.allHeaderFields["Set-Cookie"] {
 				let PHPSessID = cookie.componentsSeparatedByString(";")[0]
 				authCookie = PHPSessID[advance(PHPSessID.startIndex, 10)...advance(PHPSessID.startIndex, PHPSessID.characters.count-1)]
+				completion()
 			}
 		}
 	}
@@ -55,6 +56,13 @@ class Kartenservice {
 	static func transactions(completion: ([Transaction]) -> ()) throws {
 		guard let authCookie = authCookie else { throw KartenserviceError.Authentication }
 
-		fatalError("Function not implemented")
+		let request = NSMutableURLRequest(URL: ksTransactionsURL)
+		request.setValue("PHPSESSID=\(authCookie)", forHTTPHeaderField: "Cookie")
+
+		Alamofire.request(request).responseData { (req, res, result) -> Void in
+			let html = NSString(data: result.value!, encoding: NSUTF8StringEncoding)
+			print(req?.allHTTPHeaderFields)
+			print(html)
+		}
 	}
 }
