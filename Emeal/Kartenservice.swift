@@ -33,7 +33,14 @@ let alamo: Alamofire.Manager = {
 }()
 
 class Kartenservice {
-	static func login(user: String, password: String, completion: (error: KartenserviceError?) -> Void) {
+	/**
+	Authenticate a user with login credentials. A session cookie is then stored for further calls to Kartenservice resources.
+	
+	- parameter user: username
+	- parameter password: password
+	- parameter completion: handler that receives an optional error of type KartenserviceError
+	*/
+	static func login(user user: String, password: String, completion: (error: KartenserviceError?) -> Void) {
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
@@ -51,6 +58,13 @@ class Kartenservice {
 		}
 	}
 
+	/**
+	Get all known transactions for an already authenticated user.
+	
+	- warning: List of transactions will be empty if an error is handed to the completion handler.
+
+	- parameter completion: handler that receives a list of transactions and an optional error of type KartenserviceError
+	*/
 	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
 		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
 			guard let res = res else { completion(transactions: [], error: .Request); return }
@@ -84,6 +98,25 @@ class Kartenservice {
 
 				completion(transactions: transactionsList, error: nil)
 			}
+		}
+	}
+
+	/**
+	Get all known transactions for a not yet authenticated user. This is usually the preferred way to go.
+	
+	- warning: List of transactions will be empty if an error is handed to the completion handler.
+	
+	- parameter user: username
+	- parameter password: password
+	- parameter completion: handler that receives a list of transactions and an optional error of type KartenserviceError
+	*/
+	static func transactions(user user: String, password: String, completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
+		login(user: user, password: password) { (error) -> Void in
+			guard error == nil else { completion(transactions: [], error: error); return }
+			transactions({ (transactions, error) -> Void in
+				guard error == nil else { completion(transactions: [], error: error); return }
+				completion(transactions: transactions, error: nil)
+			})
 		}
 	}
 }

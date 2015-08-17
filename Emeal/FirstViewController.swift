@@ -21,14 +21,11 @@ class FirstViewController: UIViewController {
 //			print(err)
 //		}
 
-		Kartenservice.login("foo", password: "bar") { (error) -> Void in
+		Kartenservice.transactions(user: "foo", password: "bar") { (transactions, error) -> Void in
 			guard error == nil else { print(error!); return }
-			Kartenservice.transactions({ (transactions, error) -> Void in
-				guard error == nil else { print(error!); return }
-				print(transactions)
-			})
+			print(transactions)
 		}
-		
+
 	}
 
 	override func didReceiveMemoryWarning() {
