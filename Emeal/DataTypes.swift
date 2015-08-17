@@ -50,3 +50,13 @@ struct TransactionElement {
 enum KSType {
 	case Article, Charge
 }
+
+struct KSUserData {
+	let cardnumber: Int!
+	let message: String! // No clue what this is for
+	let bankcode: Int!
+	let bankAccountNumber: Int! // Only displaying the first three digits
+	let chargeAmount: Double!
+	let limitAmount: Double!
+//	let password: String! // Wot?! I'd rather not throw this in here... Why the hell is it being displayed anyways?!
+}

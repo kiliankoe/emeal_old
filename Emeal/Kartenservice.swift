@@ -20,7 +20,7 @@ enum KartenserviceError: ErrorType {
 
 let ksBaseURL = NSURL(string: "http://kartenservice.studentenwerk-dresden.de/KartenService/")!
 let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
-let ksDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
+let ksUserDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 let ksLoginURL = NSURL(string: "Login.php?ccsForm=Login", relativeToURL: ksBaseURL)!
 
 // MARK: -
@@ -68,7 +68,7 @@ class Kartenservice {
 	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
 		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
 			guard let res = res else { completion(transactions: [], error: .Request); return }
-			guard res.URL?.path == "/KartenService/Transaktionen.php" else { completion(transactions: [], error: KartenserviceError.Authentication); return }
+			guard res.URL?.path == ksTransactionsURL.path else { completion(transactions: [], error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
 
 			if let data = result.value {
@@ -117,6 +117,16 @@ class Kartenservice {
 				guard error == nil else { completion(transactions: [], error: error); return }
 				completion(transactions: transactions, error: nil)
 			})
+		}
+	}
+
+	static func userdata(completion: (userdata: KSUserData?, error: KartenserviceError?) -> Void) {
+		alamo.request(.GET, ksUserDataURL).responseData { (_, res, result) -> Void in
+			guard let res = res else { completion(userdata: nil, error: .Request); return }
+			guard res.URL?.path == ksUserDataURL.path else { completion(userdata: nil, error: .Authentication); return }
+			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
+
+			fatalError("Not implemented yet")
 		}
 	}
 }
