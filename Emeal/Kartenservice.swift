@@ -10,13 +10,32 @@ import Foundation
 import Alamofire
 
 let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
+enum KartenserviceError: ErrorType {
+	case Request
+	case Server
+	case Authentication
+}
+
+// MARK: - URLs
+
 let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
 let ksDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 let ksLoginURL = NSURL(string: "Login.php", relativeToURL: ksBaseURL)!
 
-class Kartenservice {
+// MARK: -
 
-	init(user: String, password: String) {
+var authCookie: String? {
+	get {
+		return NSUserDefaults.standardUserDefaults().stringForKey(Constants.ksAuthCookieKey)
+	}
+	set {
+		NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: Constants.ksAuthCookieKey)
+		NSUserDefaults.standardUserDefaults().synchronize()
+	}
+}
+
+class Kartenservice {
+	static func login(user: String, password: String) throws {
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
@@ -25,12 +44,17 @@ class Kartenservice {
 		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 		request.HTTPBody = paramsData
 
-		Alamofire.request(request).responseData { (req, res, data) -> Void in
-			print(res)
+		Alamofire.request(request).responseData { (req, res, result) -> Void in
+			if let cookie = res?.allHeaderFields["Set-Cookie"] {
+				let PHPSessID = cookie.componentsSeparatedByString(";")[0]
+				authCookie = PHPSessID[advance(PHPSessID.startIndex, 10)...advance(PHPSessID.startIndex, PHPSessID.characters.count-1)]
+			}
 		}
 	}
 
-	func foo() {
-		print(ksTransactionsURL.absoluteString)
+	static func transactions(completion: ([Transaction]) -> ()) throws {
+		guard let authCookie = authCookie else { throw KartenserviceError.Authentication }
+
+		fatalError("Function not implemented")
 	}
 }
