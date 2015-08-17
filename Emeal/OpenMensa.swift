@@ -18,7 +18,7 @@ enum OpenMensaError: ErrorType {
 
 // MARK: - URLs
 
-let omBaseURL = NSURL(string: "https://openmensa.org/api/v2/")!
+let omBaseURL = NSURL(string: "http://openmensa.org/api/v2/")!
 let omCanteensURL = NSURL(string: "canteens", relativeToURL: omBaseURL)!
 func omMealsURL(id: Int, forDate date: NSDate) -> NSURL {
 	let dateFormatter = NSDateFormatter()

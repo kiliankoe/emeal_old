@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
 enum KartenserviceError: ErrorType {
 	case Request
 	case Server
@@ -18,6 +17,7 @@ enum KartenserviceError: ErrorType {
 
 // MARK: - URLs
 
+let ksBaseURL = NSURL(string: "http://kartenservice.studentenwerk-dresden.de/KartenService/")!
 let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
 let ksDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 let ksLoginURL = NSURL(string: "Login.php", relativeToURL: ksBaseURL)!
