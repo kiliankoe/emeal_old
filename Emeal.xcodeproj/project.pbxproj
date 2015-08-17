@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395069691B824819000F87F9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 395069681B824819000F87F9 /* Cartfile */; };
+		3950696B1B8248F2000F87F9 /* HTMLReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3950696A1B8248F2000F87F9 /* HTMLReader.framework */; };
 		3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */; };
 		3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */; };
 		3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		395069681B824819000F87F9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3950696A1B8248F2000F87F9 /* HTMLReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTMLReader.framework; path = Carthage/Build/iOS/HTMLReader.framework; sourceTree = "<group>"; };
 		3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			files = (
 				39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */,
 				39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */,
+				3950696B1B8248F2000F87F9 /* HTMLReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +113,14 @@
 		3958DFBD1B7FBD6F00B1E6A1 = {
 			isa = PBXGroup;
 			children = (
-				39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */,
-				39C89EB11B801E5700518AB0 /* Alamofire.framework */,
+				395069681B824819000F87F9 /* Cartfile */,
 				3958DFC81B7FBD6F00B1E6A1 /* Emeal */,
 				3958DFDF1B7FBD6F00B1E6A1 /* EmealTests */,
 				3958DFEA1B7FBD6F00B1E6A1 /* EmealUITests */,
 				3958DFC71B7FBD6F00B1E6A1 /* Products */,
+				3950696A1B8248F2000F87F9 /* HTMLReader.framework */,
+				39C89EB11B801E5700518AB0 /* Alamofire.framework */,
+				39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,6 +294,7 @@
 			files = (
 				3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */,
 				3958DFD31B7FBD6F00B1E6A1 /* Assets.xcassets in Resources */,
+				395069691B824819000F87F9 /* Cartfile in Resources */,
 				3958DFD11B7FBD6F00B1E6A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +324,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/HTMLReader.framework",
 			);
 			name = Carthage;
 			outputPaths = (

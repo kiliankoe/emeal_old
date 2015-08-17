@@ -1,2 +1,3 @@
 github "Alamofire/Alamofire" "2.0.0-beta.1"
+github "nolanw/HTMLReader" "v0.8.1"
 github "SwiftyJSON/SwiftyJSON" "a0fe1be5251916982475b12d7d699a1d943ae88b"
