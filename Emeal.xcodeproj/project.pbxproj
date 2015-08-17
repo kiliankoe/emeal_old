@@ -16,6 +16,7 @@
 		3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */; };
 		3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */; };
 		39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B111B81CDCC00AAB4E4 /* Array+combine.swift */; };
+		39987B151B82160000AAB4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B141B82160000AAB4E4 /* Constants.swift */; };
 		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
 		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
@@ -69,6 +70,7 @@
 		3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealUITests.swift; sourceTree = "<group>"; };
 		3958DFED1B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39987B111B81CDCC00AAB4E4 /* Array+combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+combine.swift"; sourceTree = "<group>"; };
+		39987B141B82160000AAB4E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
 		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */,
+				39987B141B82160000AAB4E4 /* Constants.swift */,
 				39A73F6A1B8002F5003F561E /* Server */,
 				39CD15DF1B813AC60065A7CA /* DataTypes.swift */,
 				3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */,
@@ -335,6 +338,7 @@
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
 				39CD15E01B813AC60065A7CA /* DataTypes.swift in Sources */,
 				3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */,
+				39987B151B82160000AAB4E4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
