@@ -27,33 +27,26 @@ struct Meal {
 }
 
 enum Ingredient {
-	case Alcohol
-	case Vegetarian
-	case Vegan
-	case Pork
-	case Beef
-	case Garlic
-	case None
+	case Alcohol, Vegetarian, Vegan, Pork, Beef, Garlic, None
 }
 
 // MARK: - Kartenservice
 
 struct Transaction {
-	let elements: [TransactionElement]!
-	let totalPrice: Double!
-}
-
-struct TransactionElement {
 	let date: NSDate!
 	let location: String! // Not sure if this is always a canteen, no need to match it anyways
 	let register: String!
 	let type: KSType!
 	let receiptNum: String!
+	var elements: [TransactionElement]!
+	let totalPrice: Double!
+}
+
+struct TransactionElement {
 	let name: String!
 	let price: Double!
 }
 
 enum KSType {
-	case Article
-	case Charge
+	case Article, Charge
 }
