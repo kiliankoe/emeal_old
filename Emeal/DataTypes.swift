@@ -8,17 +8,14 @@
 
 import Foundation
 
+// MARK: - OpenMensa
+
 struct Canteen {
 	let id: Int!
 	let name: String!
 	let city: String!
 	let address: String!
 	let coords: (Double, Double)!
-}
-
-struct Menu {
-	let canteen: String!
-	let meals: [Meal]!
 }
 
 struct Meal {
@@ -37,4 +34,26 @@ enum Ingredient {
 	case Beef
 	case Garlic
 	case None
+}
+
+// MARK: - Kartenservice
+
+struct Transaction {
+	let elements: [TransactionElement]!
+	let totalPrice: Double!
+}
+
+struct TransactionElement {
+	let date: NSDate!
+	let location: String! // Not sure if this is always a canteen, no need to match it anyways
+	let register: String!
+	let type: KSType!
+	let receiptNum: String!
+	let name: String!
+	let price: Double!
+}
+
+enum KSType {
+	case Article
+	case Charge
 }
