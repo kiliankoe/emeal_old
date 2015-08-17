@@ -32,6 +32,7 @@ struct Meal {
 enum Ingredient {
 	case Alcohol
 	case Vegetarian
+	case Vegan
 	case Pork
 	case Beef
 	case Garlic

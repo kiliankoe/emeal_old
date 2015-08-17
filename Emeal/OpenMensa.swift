@@ -46,13 +46,34 @@ class OpenMensa {
 
 				var meals = [Meal]()
 				for m in json.arrayValue {
-					let meal = Meal(id: m["id"].intValue, name: m["name"].stringValue, category: m["category"].stringValue, price: (m["prices"]["students"].doubleValue, m["prices"]["employees"].doubleValue), ingredients: [Ingredient.None])
+					let meal = Meal(id: m["id"].intValue, name: m["name"].stringValue, category: m["category"].stringValue, price: (m["prices"]["students"].doubleValue, m["prices"]["employees"].doubleValue), ingredients: processIngredients(m["notes"].arrayValue))
 					meals.append(meal)
 				}
 				completion(meals)
 			}
 		}
 	}
-
 }
 
+func processIngredients(notes: [JSON]) -> [Ingredient] {
+	var ingredients = [Ingredient]()
+	for note in notes {
+		switch note.stringValue {
+		case "Menü enthält Alkohol":
+			ingredients.append(.Alcohol)
+		case "Menü enthält kein Fleisch":
+			ingredients.append(.Vegetarian)
+		case "Menü ist vegan":
+			ingredients.append(.Vegan)
+		case "Menü enthält Schweinefleisch":
+			ingredients.append(.Pork)
+		case "Menü enthält Rindfleisch":
+			ingredients.append(.Beef)
+		case "Menü enthält Knoblauch":
+			ingredients.append(.Garlic)
+		default:
+			break
+		}
+	}
+	return ingredients
+}
