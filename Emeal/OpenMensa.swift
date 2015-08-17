@@ -13,7 +13,7 @@ import SwiftyJSON
 enum OpenMensaError: ErrorType {
 	case Request
 	case Server
-	case InvalidID
+	case UnsupportedID
 }
 
 // MARK: - URLs
@@ -51,7 +51,7 @@ class OpenMensa {
 	}
 
 	static func meals(canteenID id: Int, forDate date: NSDate, completion: ([Meal]) -> ()) throws {
-		guard supportedMensaIDs.contains(id) else { throw OpenMensaError.InvalidID }
+		guard supportedMensaIDs.contains(id) else { throw OpenMensaError.UnsupportedID }
 
 		Alamofire.request(.GET, omMealsURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
 			if let jsonData = result.value {
