@@ -12,21 +12,23 @@ class FirstViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 
-//		let ks = Kartenservice(user: "foo", password: "bar")
-
-//		OpenMensa.canteens { (canteens) -> () in
-//			print(canteens)
+//		do {
+//			try OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
+//				print(meals)
+//			}
+//		} catch let err {
+//			print(err)
 //		}
 
-//		OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
-//			print(meals)
-//		}
-
-		OpenMensa.isClosed(canteenID: 79, forDate: NSDate()) { (isClosed) -> () in
-			print(isClosed)
+		Kartenservice.login("foo", password: "bar") { (error) -> Void in
+			guard error == nil else { print(error!); return }
+			Kartenservice.transactions({ (transactions, error) -> Void in
+				guard error == nil else { print(error!); return }
+				print(transactions)
+			})
 		}
+		
 	}
 
 	override func didReceiveMemoryWarning() {

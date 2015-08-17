@@ -33,7 +33,7 @@ let alamo: Alamofire.Manager = {
 }()
 
 class Kartenservice {
-	static func login(user: String, password: String, completion: () -> ()) throws {
+	static func login(user: String, password: String, completion: (error: KartenserviceError?) -> Void) {
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
@@ -42,13 +42,21 @@ class Kartenservice {
 		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 		request.HTTPBody = paramsData
 
-		alamo.request(request).responseData { (req, res, result) -> Void in
-			completion()
+		alamo.request(request).responseData { (_, res, _) -> Void in
+			guard let res = res else { completion(error: .Request); return }
+			guard res.URL?.path == "/KartenService/Index.php" else { completion(error: .Authentication); return }
+			guard res.statusCode == 200 else { completion(error: .Server); return }
+
+			completion(error: nil)
 		}
 	}
 
-	static func transactions(completion: ([Transaction]) -> ()) throws {
-		alamo.request(.GET, ksTransactionsURL).responseData { (req, res, result) -> Void in
+	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
+		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
+			guard let res = res else { completion(transactions: [], error: .Request); return }
+			guard res.URL?.path == "/KartenService/Transaktionen.php" else { completion(transactions: [], error: KartenserviceError.Authentication); return }
+			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
+
 			if let data = result.value {
 				let document = HTMLDocument(string: NSString(data: data, encoding: NSUTF8StringEncoding) as! String)
 				let transactionsTRs = document.nodesMatchingSelector("table.grid tr")
@@ -74,7 +82,7 @@ class Kartenservice {
 					lastTransaction.elements.append(createTransactionElement(tds))
 				}
 
-				completion(transactionsList)
+				completion(transactions: transactionsList, error: nil)
 			}
 		}
 	}
