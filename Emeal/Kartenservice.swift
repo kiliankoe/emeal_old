@@ -25,7 +25,7 @@ enum KartenserviceError: ErrorType {
 
 // MARK: URLs
 
-let ksBaseURL = NSURL(string: "http://kartenservice.studentenwerk-dresden.de/KartenService/")!
+let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
 let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
 let ksUserDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 let ksLoginURL = NSURL(string: "Login.php?ccsForm=Login", relativeToURL: ksBaseURL)!
