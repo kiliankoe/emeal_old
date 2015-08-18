@@ -65,7 +65,7 @@ class TransactionsTVC: UITableViewController {
 			cell.priceLabel.text = price as String
 			cell.priceLabel.textColor = UIColor.redColor()
 		case .Charge:
-			let price = NSString(format: "+%.2f€", thisTransaction.totalPrice)
+			let price = NSString(format: "%.2f€", thisTransaction.totalPrice)
 			cell.priceLabel.text = price as String
 			cell.priceLabel.textColor = UIColor.blackColor()
 		}
