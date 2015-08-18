@@ -60,7 +60,7 @@ class OpenMensa {
 
 				var canteens = [Canteen]()
 				for c in json.arrayValue {
-					canteens.append(Canteen(id: c["id"].intValue, name: c["name"].stringValue, city: c["city"].stringValue, address: c["address"].stringValue, coords: (c["coordinates"][0].doubleValue, c["coordinates"][1].doubleValue)))
+					canteens.append(Canteen(id: c["id"].intValue, name: processCanteenName(c["name"].stringValue), city: c["city"].stringValue, address: processCanteenAddress(c["address"].stringValue), coords: (c["coordinates"][0].doubleValue, c["coordinates"][1].doubleValue)))
 				}
 				completion(canteens: canteens, error: nil)
 			}
@@ -150,4 +150,36 @@ func processIngredients(notes: [JSON]) -> [Ingredient] {
 		}
 	}
 	return ingredients
+}
+
+/**
+Convert "Dresden, Alte Mensa" to "Alte Mensa".
+
+- parameter name: Name returned by OpenMensa
+
+- returns: Optimized name
+*/
+func processCanteenName(var name: String) -> String {
+	let range = name.rangeOfString("Dresden, ")
+	if let range = range {
+		name.replaceRange(range, with: "")
+		return name
+	}
+	return name
+}
+
+/**
+Remove ", Deutschland" from those addresses that have it.
+
+- parameter address: Address returned by OpenMensa
+
+- returns: Optimized address
+*/
+func processCanteenAddress(var address: String) -> String {
+	let range = address.rangeOfString(", Deutschland")
+	if let range = range {
+		address.replaceRange(range, with: "")
+		return address
+	}
+	return address
 }
