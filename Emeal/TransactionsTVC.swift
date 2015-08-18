@@ -15,7 +15,8 @@ class TransactionsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "update")
+		self.navigationItem.title = "Last Transactions"
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "update")
 
 		update()
     }

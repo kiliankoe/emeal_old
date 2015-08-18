@@ -15,6 +15,8 @@ class CanteenTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.navigationItem.title = "Canteens"
+
 		OpenMensa.canteens { [unowned self] (canteens, error) -> ()  in
 			guard error == nil else { print(error!); return }
 
