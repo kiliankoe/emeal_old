@@ -127,6 +127,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="9Rh-DF-xIp" kind="relationship" relationship="viewControllers" id="Qbs-Hw-c9c"/>
                         <segue destination="RQ2-LP-E4R" kind="relationship" relationship="viewControllers" id="buT-jZ-by0"/>
                         <segue destination="slV-L0-hqV" kind="relationship" relationship="viewControllers" id="7tc-52-f1c"/>
                         <segue destination="IWl-qf-9sL" kind="relationship" relationship="viewControllers" id="tjL-MP-Tu9"/>
@@ -209,6 +210,25 @@
             </objects>
             <point key="canvasLocation" x="1522" y="-1"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="L3g-Yr-SKX">
+            <objects>
+                <viewController id="aPe-k3-zmN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vCR-Zv-HOE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gsc-t2-KTa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U0f-5O-7Le">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pmk-m1-EV8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s11-68-7fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="-1423"/>
+        </scene>
         <!--Menu-->
         <scene sceneID="Gkf-Z6-2Ah">
             <objects>
@@ -266,8 +286,28 @@
             </objects>
             <point key="canvasLocation" x="710" y="763"/>
         </scene>
+        <!--Emeal-->
+        <scene sceneID="tbn-ia-kEC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Rh-DF-xIp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Emeal" image="emeal" id="EMY-P2-T9f"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0uM-CX-8Eg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aPe-k3-zmN" kind="relationship" relationship="rootViewController" id="kZY-wj-pM6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CnZ-Mo-L5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="-1423"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="emeal" width="32" height="32"/>
         <image name="menu" width="32" height="32"/>
         <image name="transactions" width="32" height="32"/>
         <image name="userdata" width="32" height="31"/>
