@@ -148,9 +148,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,89€" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icw-u3-5DO">
-                                            <rect key="frame" x="448" y="3.5" width="119" height="32"/>
+                                            <rect key="frame" x="448" y="5" width="119" height="32"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="119" id="L2F-bO-RgO"/>
+                                                <constraint firstAttribute="width" constant="119" id="FKU-6q-WXy"/>
+                                                <constraint firstAttribute="height" constant="32" id="O2d-R3-6wk"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -169,11 +170,10 @@
                                     <constraints>
                                         <constraint firstItem="vhU-PF-oV7" firstAttribute="top" secondItem="eP0-XY-tat" secondAttribute="bottom" id="0Gm-c8-QE5"/>
                                         <constraint firstItem="vhU-PF-oV7" firstAttribute="leading" secondItem="bY4-Bj-cpc" secondAttribute="leadingMargin" constant="7" id="FMw-8Y-Dk2"/>
-                                        <constraint firstAttribute="bottom" secondItem="Icw-u3-5DO" secondAttribute="bottom" constant="8" id="KY9-3j-EIL"/>
-                                        <constraint firstItem="Icw-u3-5DO" firstAttribute="top" secondItem="bY4-Bj-cpc" secondAttribute="top" constant="3.5" id="ioh-aJ-mwH"/>
+                                        <constraint firstItem="Icw-u3-5DO" firstAttribute="top" secondItem="bY4-Bj-cpc" secondAttribute="top" constant="5" id="UZv-Zt-3ZH"/>
+                                        <constraint firstAttribute="trailing" secondItem="Icw-u3-5DO" secondAttribute="trailing" id="WBC-8h-Byt"/>
                                         <constraint firstItem="eP0-XY-tat" firstAttribute="top" secondItem="bY4-Bj-cpc" secondAttribute="top" constant="6" id="lgn-Al-Arw"/>
                                         <constraint firstItem="eP0-XY-tat" firstAttribute="leading" secondItem="bY4-Bj-cpc" secondAttribute="leading" constant="15" id="p5S-ZK-4cq"/>
-                                        <constraint firstAttribute="trailing" secondItem="Icw-u3-5DO" secondAttribute="trailing" id="pRD-iE-EQI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
