@@ -104,6 +104,7 @@ class Kartenservice {
 				}
 
 				completion(transactions: transactionsList, error: nil)
+				return
 			}
 			completion(transactions: [], error: .Server)
 		}
