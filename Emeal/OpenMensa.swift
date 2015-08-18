@@ -6,7 +6,7 @@
 //  Copyright © 2015 Kilian Koeltzsch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import SwiftyJSON
 
@@ -49,7 +49,9 @@ class OpenMensa {
 	- parameter completion: handler that is provided with said list of canteens and an optional error of type `OpenMensaError?`
 	*/
 	static func canteens(completion completion: (canteens: [Canteen], error: OpenMensaError?) -> ()) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		Alamofire.request(Method.GET, omCanteensURL, parameters: ["ids": supportedCanteenIDs.combine(",")]).responseJSON { (_, res, result) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(canteens: [], error: .Request); return }
 			guard res.statusCode == 200 else { completion(canteens: [], error: .Server); return }
 
@@ -73,9 +75,11 @@ class OpenMensa {
 	- parameter completion: handler that is provided with list of meals and an optional error of type `OpenMensaError?`
 	*/
 	static func meals(canteenID id: Int, forDate date: NSDate, completion: (meals: [Meal], error: OpenMensaError?) -> ()) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		guard supportedCanteenIDs.contains(id) else { completion(meals: [], error: .UnsupportedCanteen); return }
 
 		Alamofire.request(.GET, omMealsURL(id, forDate: date)).responseJSON { (_, res, result) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(meals: [], error: .Request); return }
 			guard res.statusCode == 200 else { completion(meals: [], error: .Server); return }
 
@@ -102,9 +106,11 @@ class OpenMensa {
 	- parameter completion: handler that is provided with an optional bool and an optional error of type `OpenMensaError?`
 	*/
 	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (isClosed: Bool?, error: OpenMensaError?) -> ()) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		guard supportedCanteenIDs.contains(id) else { completion(isClosed: nil, error: .UnsupportedCanteen); return }
 
 		Alamofire.request(.GET, omDaysURL(id, forDate: date)).responseJSON { (_, res, result) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(isClosed: nil, error: .Request); return }
 			guard res.statusCode == 200 else { completion(isClosed: nil, error: .Server); return }
 

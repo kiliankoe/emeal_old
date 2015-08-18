@@ -6,7 +6,7 @@
 //  Copyright © 2015 Kilian Koeltzsch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 import HTMLReader
 
@@ -48,6 +48,7 @@ class Kartenservice {
 	- parameter completion: handler that receives an optional error of type `KartenserviceError?`
 	*/
 	static func login(user user: String, password: String, completion: (error: KartenserviceError?) -> Void) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
@@ -57,6 +58,7 @@ class Kartenservice {
 		request.HTTPBody = paramsData
 
 		alamo.request(request).responseData { (_, res, _) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(error: .Request); return }
 			guard res.URL?.path == "/KartenService/Index.php" else { completion(error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(error: .Server); return }
@@ -73,7 +75,9 @@ class Kartenservice {
 	- parameter completion: handler that receives a list of transactions and an optional error of type `KartenserviceError?`
 	*/
 	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(transactions: [], error: .Request); return }
 			guard res.URL?.path == ksTransactionsURL.path else { completion(transactions: [], error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
@@ -137,7 +141,9 @@ class Kartenservice {
 	- parameter completion: handler that is provided with user data of type `KSUserData?` and an optional error of type `KartenserviceError?`
 	*/
 	static func userdata(completion: (userdata: KSUserData?, error: KartenserviceError?) -> Void) {
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		alamo.request(.GET, ksUserDataURL).responseData { (_, res, result) -> Void in
+			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(userdata: nil, error: .Request); return }
 			guard res.URL?.path == ksUserDataURL.path else { completion(userdata: nil, error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
