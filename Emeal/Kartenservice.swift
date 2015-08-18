@@ -45,7 +45,7 @@ class Kartenservice {
 	
 	- parameter user: username
 	- parameter password: password
-	- parameter completion: handler that receives an optional error of type KartenserviceError
+	- parameter completion: handler that receives an optional error of type `KartenserviceError?`
 	*/
 	static func login(user user: String, password: String, completion: (error: KartenserviceError?) -> Void) {
 		let params = "login=\(user)&password=\(password)"
@@ -70,7 +70,7 @@ class Kartenservice {
 	
 	- warning: List of transactions will be empty if an error is handed to the completion handler.
 
-	- parameter completion: handler that receives a list of transactions and an optional error of type KartenserviceError
+	- parameter completion: handler that receives a list of transactions and an optional error of type `KartenserviceError?`
 	*/
 	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
 		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
@@ -109,13 +109,13 @@ class Kartenservice {
 	}
 
 	/**
-	Get all known transactions for a not yet authenticated user. This is usually the preferred way to go.
+	Get all known transactions for a not yet authenticated user. This is the preferred method.
 	
 	- warning: List of transactions will be empty if an error is handed to the completion handler.
 	
 	- parameter user: username
 	- parameter password: password
-	- parameter completion: handler that receives a list of transactions and an optional error of type KartenserviceError
+	- parameter completion: handler that receives a list of transactions and an optional error of type `KartenserviceError?`
 	*/
 	static func transactions(user user: String, password: String, completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
 		login(user: user, password: password) { (error) -> Void in
@@ -127,6 +127,13 @@ class Kartenservice {
 		}
 	}
 
+	/**
+	Get user data for an already authenticated user.
+	
+	- warning: userdata is an optional. It will however be present if error is nil.
+	
+	- parameter completion: handler that is provided with user data of type `KSUserData?` and an optional error of type `KartenserviceError?`
+	*/
 	static func userdata(completion: (userdata: KSUserData?, error: KartenserviceError?) -> Void) {
 		alamo.request(.GET, ksUserDataURL).responseData { (_, res, result) -> Void in
 			guard let res = res else { completion(userdata: nil, error: .Request); return }
@@ -134,6 +141,25 @@ class Kartenservice {
 			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
 
 			fatalError("Not implemented yet")
+		}
+	}
+
+	/**
+	Get user data for a not yet authenticated user. This is the preferred method.
+	
+	- warning: userdata is an optional. It will however be present if error is nil.
+
+	- parameter user: username
+	- parameter password: password
+	- parameter completion: handler that is provided with user data of type `KSUserData?` and an optional error of type `KartenserviceError?`
+	*/
+	static func userdata(user user: String, password: String, completion: (userdata: KSUserData?, error: KartenserviceError?) -> Void) {
+		login(user: user, password: password) { (error) -> Void in
+			guard error == nil else { completion(userdata: nil, error: error); return }
+			userdata({ (userdata, error) -> Void in
+				guard error == nil else { completion(userdata: nil, error: error); return }
+				completion(userdata: userdata, error: nil)
+			})
 		}
 	}
 }

@@ -46,7 +46,7 @@ class OpenMensa {
 	/**
 	List all canteens in Dresden (or belonging to the TU somehow).
 	
-	- parameter completion: handler that is provided with said list of canteens and an optional error of type OpenMensaError
+	- parameter completion: handler that is provided with said list of canteens and an optional error of type `OpenMensaError?`
 	*/
 	static func canteens(completion completion: (canteens: [Canteen], error: OpenMensaError?) -> ()) {
 		Alamofire.request(Method.GET, omCanteensURL, parameters: ["ids": supportedCanteenIDs.combine(",")]).responseJSON { (_, res, result) -> Void in
@@ -70,7 +70,7 @@ class OpenMensa {
 	
 	- parameter canteenID: ID of a canteen as provided by OpenMensa.canteens()
 	- parameter forDate: the day the meals are from (e.g. `NSDate()` for today)
-	- parameter completion: handler that is provided with list of meals and an optional error of type OpenMensaError
+	- parameter completion: handler that is provided with list of meals and an optional error of type `OpenMensaError?`
 	*/
 	static func meals(canteenID id: Int, forDate date: NSDate, completion: (meals: [Meal], error: OpenMensaError?) -> ()) {
 		guard supportedCanteenIDs.contains(id) else { completion(meals: [], error: .UnsupportedCanteen); return }
@@ -95,9 +95,11 @@ class OpenMensa {
 	/**
 	Check if a specific canteen is closed on a date.
 	
-	- parameter canteenID: ID of a canteen as provided by OpenMensa.canteens()
+	- warning: isClosed is an optional. It will however be present if error is nil.
+	
+	- parameter canteenID: ID of a canteen as provided by `OpenMensa.canteens()`
 	- parameter forDate: the date to be checked
-	- parameter completion: handler that is provided with an optional bool and an optional error of type OpenMensaError. If the error is nil, isClosed will always be present.
+	- parameter completion: handler that is provided with an optional bool and an optional error of type `OpenMensaError?`
 	*/
 	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (isClosed: Bool?, error: OpenMensaError?) -> ()) {
 		guard supportedCanteenIDs.contains(id) else { completion(isClosed: nil, error: .UnsupportedCanteen); return }
