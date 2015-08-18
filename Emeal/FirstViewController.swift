@@ -13,18 +13,25 @@ class FirstViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-//		do {
-//			try OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals) -> () in
-//				print(meals)
-//			}
-//		} catch let err {
-//			print(err)
+//		OpenMensa.canteens { (canteens, error) -> () in
+//			guard error == nil else { print(error!); return }
+//			print(canteens)
 //		}
 
-		Kartenservice.transactions(user: "foo", password: "bar") { (transactions, error) -> Void in
+		OpenMensa.meals(canteenID: 79, forDate: NSDate()) { (meals, error) -> () in
 			guard error == nil else { print(error!); return }
-			print(transactions)
+			print(meals)
 		}
+
+//		OpenMensa.isClosed(canteenID: 91, forDate: NSDate()) { (isClosed, error) -> () in
+//			guard error == nil else { print(error!); return }
+//			print(isClosed!)
+//		}
+
+//		Kartenservice.transactions(user: "foo", password: "bar") { (transactions, error) -> Void in
+//			guard error == nil else { print(error!); return }
+//			print(transactions)
+//		}
 
 	}
 

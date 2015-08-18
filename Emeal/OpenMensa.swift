@@ -13,10 +13,10 @@ import SwiftyJSON
 enum OpenMensaError: ErrorType {
 	case Request
 	case Server
-	case UnsupportedID
+	case UnsupportedCanteen
 }
 
-// MARK: - URLs
+// MARK: URLs
 
 let omBaseURL = NSURL(string: "http://openmensa.org/api/v2/")!
 let omCanteensURL = NSURL(string: "canteens", relativeToURL: omBaseURL)!
@@ -33,11 +33,19 @@ func omDaysURL(id: Int, forDate date: NSDate) -> NSURL {
 
 // MARK: -
 
-let supportedMensaIDs = [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]
+let supportedCanteenIDs = [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]
 
 class OpenMensa {
-	static func canteens(completion completion: ([Canteen]) -> ()) throws {
-		Alamofire.request(Method.GET, omCanteensURL, parameters: ["ids": supportedMensaIDs.combine(",")]).responseJSON { (req, res, result) -> Void in
+	/**
+	List all canteens in Dresden (or belonging to the TU somehow).
+	
+	- parameter completion: handler that is provided with said list of canteens and an optional error of type OpenMensaError
+	*/
+	static func canteens(completion completion: (canteens: [Canteen], error: OpenMensaError?) -> ()) {
+		Alamofire.request(Method.GET, omCanteensURL, parameters: ["ids": supportedCanteenIDs.combine(",")]).responseJSON { (_, res, result) -> Void in
+			guard let res = res else { completion(canteens: [], error: .Request); return }
+			guard res.statusCode == 200 else { completion(canteens: [], error: .Server); return }
+
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
 
@@ -45,15 +53,25 @@ class OpenMensa {
 				for c in json.arrayValue {
 					canteens.append(Canteen(id: c["id"].intValue, name: c["name"].stringValue, city: c["city"].stringValue, address: c["address"].stringValue, coords: (c["coordinates"][0].doubleValue, c["coordinates"][1].doubleValue)))
 				}
-				completion(canteens)
+				completion(canteens: canteens, error: nil)
 			}
 		}
 	}
 
-	static func meals(canteenID id: Int, forDate date: NSDate, completion: ([Meal]) -> ()) throws {
-		guard supportedMensaIDs.contains(id) else { throw OpenMensaError.UnsupportedID }
+	/**
+	List all meals for given canteen ID and date.
+	
+	- parameter canteenID: ID of a canteen as provided by OpenMensa.canteens()
+	- parameter forDate: the day the meals are from (e.g. `NSDate()` for today)
+	- parameter completion: handler that is provided with list of meals and an optional error of type OpenMensaError
+	*/
+	static func meals(canteenID id: Int, forDate date: NSDate, completion: (meals: [Meal], error: OpenMensaError?) -> ()) {
+		guard supportedCanteenIDs.contains(id) else { completion(meals: [], error: .UnsupportedCanteen); return }
 
-		Alamofire.request(.GET, omMealsURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
+		Alamofire.request(.GET, omMealsURL(id, forDate: date)).responseJSON { (_, res, result) -> Void in
+			guard let res = res else { completion(meals: [], error: .Request); return }
+			guard res.statusCode == 200 else { completion(meals: [], error: .Server); return }
+
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
 
@@ -62,17 +80,28 @@ class OpenMensa {
 					let meal = Meal(id: m["id"].intValue, name: m["name"].stringValue, category: m["category"].stringValue, price: (m["prices"]["students"].doubleValue, m["prices"]["employees"].doubleValue), ingredients: processIngredients(m["notes"].arrayValue))
 					meals.append(meal)
 				}
-				completion(meals)
+				completion(meals: meals, error: nil)
 			}
 		}
 	}
 
-	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (Bool) -> ()) throws {
-		Alamofire.request(.GET, omDaysURL(id, forDate: date)).responseJSON { (req, res, result) -> Void in
+	/**
+	Check if a specific canteen is closed on a date.
+	
+	- parameter canteenID: ID of a canteen as provided by OpenMensa.canteens()
+	- parameter forDate: the date to be checked
+	- parameter completion: handler that is provided with an optional bool and an optional error of type OpenMensaError. If the error is nil, isClosed will always be present.
+	*/
+	static func isClosed(canteenID id: Int, forDate date: NSDate, completion: (isClosed: Bool?, error: OpenMensaError?) -> ()) {
+		guard supportedCanteenIDs.contains(id) else { completion(isClosed: nil, error: .UnsupportedCanteen); return }
+
+		Alamofire.request(.GET, omDaysURL(id, forDate: date)).responseJSON { (_, res, result) -> Void in
+			guard let res = res else { completion(isClosed: nil, error: .Request); return }
+			guard res.statusCode == 200 else { completion(isClosed: nil, error: .Server); return }
+
 			if let jsonData = result.value {
 				let json = JSON(jsonData)
-
-				completion(json["closed"].boolValue)
+				completion(isClosed: json["closed"].bool, error: nil)
 			}
 		}
 	}
