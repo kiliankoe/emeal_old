@@ -10,13 +10,15 @@
 		395069691B824819000F87F9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 395069681B824819000F87F9 /* Cartfile */; };
 		3950696B1B8248F2000F87F9 /* HTMLReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3950696A1B8248F2000F87F9 /* HTMLReader.framework */; };
 		3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */; };
-		3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */; };
-		3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */; };
 		3958DFD11B7FBD6F00B1E6A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */; };
 		3958DFD31B7FBD6F00B1E6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */; };
 		3958DFD61B7FBD6F00B1E6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */; };
 		3958DFE11B7FBD6F00B1E6A1 /* EmealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFE01B7FBD6F00B1E6A1 /* EmealTests.swift */; };
 		3958DFEC1B7FBD6F00B1E6A1 /* EmealUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */; };
+		396270D91B836072007273A7 /* TransactionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396270D81B836072007273A7 /* TransactionsTVC.swift */; };
+		396270DC1B836A89007273A7 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396270DB1B836A89007273A7 /* TransactionCell.swift */; };
+		396270DE1B836C1F007273A7 /* CanteenTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396270DD1B836C1F007273A7 /* CanteenTVC.swift */; };
+		396270E11B836D31007273A7 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396270E01B836D31007273A7 /* MenuTVC.swift */; };
 		39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B111B81CDCC00AAB4E4 /* Array+combine.swift */; };
 		39987B151B82160000AAB4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B141B82160000AAB4E4 /* Constants.swift */; };
 		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
@@ -61,8 +63,6 @@
 		3950696A1B8248F2000F87F9 /* HTMLReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTMLReader.framework; path = Carthage/Build/iOS/HTMLReader.framework; sourceTree = "<group>"; };
 		3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3958DFD01B7FBD6F00B1E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3958DFD51B7FBD6F00B1E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +73,10 @@
 		3958DFE71B7FBD6F00B1E6A1 /* EmealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFEB1B7FBD6F00B1E6A1 /* EmealUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmealUITests.swift; sourceTree = "<group>"; };
 		3958DFED1B7FBD6F00B1E6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396270D81B836072007273A7 /* TransactionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTVC.swift; sourceTree = "<group>"; };
+		396270DB1B836A89007273A7 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		396270DD1B836C1F007273A7 /* CanteenTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanteenTVC.swift; sourceTree = "<group>"; };
+		396270E01B836D31007273A7 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		39987B111B81CDCC00AAB4E4 /* Array+combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+combine.swift"; sourceTree = "<group>"; };
 		39987B141B82160000AAB4E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
@@ -139,10 +143,10 @@
 			children = (
 				3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */,
 				39987B141B82160000AAB4E4 /* Constants.swift */,
-				39A73F6A1B8002F5003F561E /* Server */,
 				39CD15DF1B813AC60065A7CA /* DataTypes.swift */,
-				3958DFCB1B7FBD6F00B1E6A1 /* FirstViewController.swift */,
-				3958DFCD1B7FBD6F00B1E6A1 /* SecondViewController.swift */,
+				39A73F6A1B8002F5003F561E /* Server */,
+				396270DF1B836C27007273A7 /* Menu */,
+				396270DA1B836A73007273A7 /* Transactions */,
 				3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */,
 				3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */,
 				3958DFD41B7FBD6F00B1E6A1 /* LaunchScreen.storyboard */,
@@ -168,6 +172,24 @@
 				3958DFED1B7FBD6F00B1E6A1 /* Info.plist */,
 			);
 			path = EmealUITests;
+			sourceTree = "<group>";
+		};
+		396270DA1B836A73007273A7 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				396270D81B836072007273A7 /* TransactionsTVC.swift */,
+				396270DB1B836A89007273A7 /* TransactionCell.swift */,
+			);
+			name = Transactions;
+			sourceTree = "<group>";
+		};
+		396270DF1B836C27007273A7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				396270DD1B836C1F007273A7 /* CanteenTVC.swift */,
+				396270E01B836D31007273A7 /* MenuTVC.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		39987B131B81CE0800AAB4E4 /* Helpers */ = {
@@ -340,14 +362,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396270DC1B836A89007273A7 /* TransactionCell.swift in Sources */,
 				39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */,
+				396270DE1B836C1F007273A7 /* CanteenTVC.swift in Sources */,
 				39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */,
 				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
-				3958DFCE1B7FBD6F00B1E6A1 /* SecondViewController.swift in Sources */,
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
+				396270E11B836D31007273A7 /* MenuTVC.swift in Sources */,
 				39CD15E01B813AC60065A7CA /* DataTypes.swift in Sources */,
-				3958DFCC1B7FBD6F00B1E6A1 /* FirstViewController.swift in Sources */,
 				39987B151B82160000AAB4E4 /* Constants.swift in Sources */,
+				396270D91B836072007273A7 /* TransactionsTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,9 +516,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Emeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -507,9 +533,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Emeal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kilian.Emeal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
