@@ -10,6 +10,13 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/**
+Errors specific to OpenMensa
+
+- Request: Unable to get any response. Internet?
+- Server: Server response isn't as expected
+- UnsupportedCanteen: We're only dealing with canteens specific to Dresden here, sorry
+*/
 enum OpenMensaError: ErrorType {
 	case Request
 	case Server
@@ -107,6 +114,13 @@ class OpenMensa {
 	}
 }
 
+/**
+Utility function to process a list of ingredients in string form to the appropriate enum.
+
+- parameter notes: JSON object array of notes
+
+- returns: Array of type `[Ingredient]`
+*/
 func processIngredients(notes: [JSON]) -> [Ingredient] {
 	var ingredients = [Ingredient]()
 	for note in notes {

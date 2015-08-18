@@ -10,6 +10,13 @@ import Foundation
 import Alamofire
 import HTMLReader
 
+/**
+Errors specific to Kartenservice
+
+- Request: Unable to get any response. Internet?
+- Server: Server response isn't as expected
+- Authentication: Unable to authenticate with user credentials
+*/
 enum KartenserviceError: ErrorType {
 	case Request
 	case Server
