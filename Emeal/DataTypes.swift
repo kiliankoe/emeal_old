@@ -52,10 +52,10 @@ enum KSType {
 }
 
 struct KSUserData {
-	let cardnumber: Int!
+	let cardNumber: Int!
 	let message: String! // No clue what this is for
-	let bankcode: Int!
-	let bankAccountNumber: Int! // Only displaying the first three digits
+	let bankCode: Int!
+	let bankAccountNumber: String! // Keeping the format 307xxxxx
 	let chargeAmount: Double!
 	let limitAmount: Double!
 //	let password: String! // Wot?! I'd rather not throw this in here... Why the hell is it being displayed anyways?!

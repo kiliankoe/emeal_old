@@ -79,7 +79,7 @@ class Kartenservice {
 			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
 
 			if let data = result.value {
-				let document = HTMLDocument(string: NSString(data: data, encoding: NSUTF8StringEncoding) as! String)
+				let document = HTMLDocument(data: data, contentTypeHeader: (res.allHeaderFields["Content-Type"] as! String))
 				let transactionsTRs = document.nodesMatchingSelector("table.grid tr")
 
 				var transactionsList = [Transaction]()
@@ -105,6 +105,7 @@ class Kartenservice {
 
 				completion(transactions: transactionsList, error: nil)
 			}
+			completion(transactions: [], error: .Server)
 		}
 	}
 
@@ -140,7 +141,26 @@ class Kartenservice {
 			guard res.URL?.path == ksUserDataURL.path else { completion(userdata: nil, error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
 
-			fatalError("Not implemented yet")
+			if let data = result.value {
+				let document = HTMLDocument(data: data, contentTypeHeader: (res.allHeaderFields["Content-Type"] as! String))
+
+				let controls = document.nodesMatchingSelector("form#KAKARTE2 tr.Controls")
+
+				if let cardNumber        = Int(controls[0].childElementNodes[1].textContent),
+				       message           = controls[1].childElementNodes[1].textContent,
+				       bankCode          = Int(controls[2].childElementNodes[1].textContent),
+				       bankAccountNumber = controls[3].childElementNodes[1].textContent,
+					   chargeAmount      = controls[4].childElementNodes[1].childElementNodes[0]["value"] as? String,
+					   limitAmount       = controls[5].childElementNodes[1].childElementNodes[0]["value"] as? String
+				{
+					let userData = KSUserData(cardNumber: cardNumber, message: message, bankCode: bankCode, bankAccountNumber: bankAccountNumber, chargeAmount: readPrice(chargeAmount), limitAmount: readPrice(limitAmount))
+					completion(userdata: userData, error: nil)
+					return
+				}
+				completion(userdata: nil, error: .Server)
+				return
+			}
+			completion(userdata: nil, error: .Server)
 		}
 	}
 
