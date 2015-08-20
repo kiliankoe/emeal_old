@@ -21,6 +21,7 @@ enum KartenserviceError: ErrorType {
 	case Request
 	case Server
 	case Authentication
+	case Closed
 }
 
 // MARK: URLs
@@ -57,9 +58,18 @@ class Kartenservice {
 		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 		request.HTTPBody = paramsData
 
-		alamo.request(request).responseData { (_, res, _) -> Void in
+		alamo.request(request).responseData { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(error: .Request); return }
+
+			// Unfortunately need to check for this as we're returning an .Authentication error otherwise
+			if let data = result.value {
+				if let _ = (NSString(data: data, encoding: NSUTF8StringEncoding) as! String).rangeOfString("Session halted.") {
+					completion(error: .Closed)
+					return
+				}
+			}
+
 			guard res.URL?.path == "/KartenService/Index.php" else { completion(error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(error: .Server); return }
 
