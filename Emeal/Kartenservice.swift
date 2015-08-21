@@ -207,12 +207,13 @@ class Kartenservice {
 Convert a price from a given string (e.g. "2,30 €") into a double value.
 
 - parameter price: string representation of price
+- parameter makePositive: bool value that specifies if a negative value should be made positive, defaults to false
 - returns: double value
 */
-func readPrice(var price: String) -> Double {
+func readPrice(var price: String, makePositive: Bool = false) -> Double {
 	let range = price.rangeOfString(",")
 	price.replaceRange(range!, with: ".")
-	return (price.componentsSeparatedByString(" ")[0] as NSString).doubleValue
+	return makePositive ? (price.componentsSeparatedByString(" ")[0] as NSString).doubleValue * -1 : (price.componentsSeparatedByString(" ")[0] as NSString).doubleValue
 }
 
 /**
@@ -257,6 +258,12 @@ func createTransaction(tr: [AnyObject], placeholder: Bool = false) -> Transactio
 	if placeholder {
 		return Transaction(date: NSDate(), location: "", register: "", type: .Article, receiptNum: "", elements: [], totalPrice: -1.0)
 	}
+
+	// Deposits are not specifically marked as such, so we're checking the price to determine that
+	if readPrice(tr[7].textContent) < 0 {
+		return Transaction(date: readDate(tr[0].textContent), location: tr[1].textContent, register: tr[2].textContent, type: .Charge, receiptNum: tr[4].textContent, elements: [], totalPrice: readPrice(tr[7].textContent, makePositive: true))
+	}
+
 	return Transaction(date: readDate(tr[0].textContent), location: tr[1].textContent, register: tr[2].textContent, type: readType(tr[3].textContent), receiptNum: tr[4].textContent, elements: [], totalPrice: readPrice(tr[7].textContent))
 }
 
