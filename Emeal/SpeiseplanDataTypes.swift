@@ -19,18 +19,30 @@ struct Meal {
 	let name: String!
 //	let category: String!
 	let price: PricePair!
-	var ingredients: [BaseIngredient]!
+	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var image: UIImage?
 }
 
 typealias PricePair = (student: Double, employee: Double)
 
-enum BaseIngredient {
+enum Ingredient {
 	case Alcohol, Vegetarian, Vegan, Pork, Beef, Garlic
 }
 
-// Not going to translate these into English...
-enum Allergen {
-	case GlutenhaltigesGetreide, Soja, Sesam, Laktose, Sellerie, Senf, Ei, Nuesse, Schwefeldioxid, Fisch, Weichtiere
+enum Allergen: String {
+	case A = "Glutenhaltiges Getreide (A)"
+	case B = "Krebstiere (B)"
+	case C = "Eier (C)"
+	case D = "Fisch (D)"
+	case E = "Erdnüsse (E)"
+	case F = "Soja (F)"
+	case G = "Milch/Milchzucker (Laktose) (G)"
+	case H = "Schalenfrüchte (Nüsse) (H)"
+	case I = "Sellerie (I)"
+	case J = "Senf (J)"
+	case K = "Sesam (K)"
+	case L = "Sulfit/Schwefeldioxid (L)"
+	case M = "Lupine (M)"
+	case N = "Weichtiere (N)"
 }
