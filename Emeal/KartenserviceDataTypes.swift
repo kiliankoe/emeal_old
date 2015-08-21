@@ -1,36 +1,12 @@
 //
-//  MenuDataTypes.swift
+//  KartenserviceDataTypes.swift
 //  Emeal
 //
-//  Created by Kilian Költzsch on 16/08/15.
+//  Created by Kilian Költzsch on 21/08/15.
 //  Copyright © 2015 Kilian Koeltzsch. All rights reserved.
 //
 
 import Foundation
-
-// MARK: - OpenMensa
-
-struct Canteen {
-	let id: Int!
-	let name: String!
-	let city: String!
-	let address: String!
-	let coords: (Double, Double)!
-}
-
-struct Meal {
-	let id: Int!
-	let name: String!
-	let category: String!
-	let price: (Double, Double)!
-	let ingredients: [Ingredient]!
-}
-
-enum Ingredient {
-	case Alcohol, Vegetarian, Vegan, Pork, Beef, Garlic, None
-}
-
-// MARK: - Kartenservice
 
 struct Transaction {
 	let date: NSDate!
@@ -55,8 +31,8 @@ struct KSUserData {
 	let cardNumber: Int!
 	let message: String! // No clue what this is for
 	let bankCode: Int!
-	let bankAccountNumber: String! // Keeping the format 307xxxxx
+	let bankAccountNumber: String! // Keeping the format "307xxxxx"
 	let chargeAmount: Double!
 	let limitAmount: Double!
-//	let password: String! // Wot?! I'd rather not throw this in here... Why the hell is it being displayed anyways?!
+	//	let password: String! // Wot?! I'd rather not throw this in here... Why the hell is it being displayed anyways?!
 }
