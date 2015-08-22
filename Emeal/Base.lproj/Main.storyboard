@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mealCell" textLabel="e11-Ls-Paf" detailTextLabel="DfG-wa-3Aj" style="IBUITableViewCellStyleValue1" id="IUg-He-p2Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mealCell" textLabel="e11-Ls-Paf" detailTextLabel="DfG-wa-3Aj" style="IBUITableViewCellStyleValue1" id="IUg-He-p2Y" customClass="MealCell" customModule="Emeal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IUg-He-p2Y" id="dgC-7m-PCR">
@@ -85,6 +85,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="e11-Ls-Paf" id="g4b-pk-CQ8"/>
+                                    <outlet property="priceLabel" destination="DfG-wa-3Aj" id="6Lu-XD-79b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

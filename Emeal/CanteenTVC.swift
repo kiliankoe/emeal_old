@@ -8,21 +8,19 @@
 
 import UIKit
 
-class CanteenTVC: UITableViewController {
+class CanteenTVC: UITableViewController, SpeiseplanDelegate {
 
 	var canteens = [Canteen]()
+
+	let speiseplan = Speiseplan.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		self.navigationItem.title = "Canteens"
 
-		OpenMensa.canteens { [unowned self] (canteens, error) -> ()  in
-			guard error == nil else { print(error!); return }
-
-			self.canteens = canteens
-			self.tableView.reloadData()
-		}
+		speiseplan.delegate = self
+		speiseplan.loadFeed()
     }
 
     // MARK: - Table view data source
@@ -53,13 +51,28 @@ class CanteenTVC: UITableViewController {
 		if segue.identifier == "showMenu" {
 			let dest = segue.destinationViewController as! MenuTVC
 			let selectedCanteen = canteens[tableView.indexPathForSelectedRow!.row]
-			dest.canteenID = selectedCanteen.id
+			dest.canteen = selectedCanteen
 		}
     }
 
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		performSegueWithIdentifier("showMenu", sender: self)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+
+	// MARK: - SpeiseplanDelegate
+
+	func SpeiseplanCanteens(canteens: [Canteen]) {
+		self.canteens = canteens
+		tableView.reloadData()
+	}
+
+	func SpeiseplanErrorEncountered(error: SpeiseplanError) {
+		print(error)
+	}
+
+	func SpeiseplanRSSErrorEncountered(error: SpeiseplanRSSError) {
+		print(error)
 	}
 
 }

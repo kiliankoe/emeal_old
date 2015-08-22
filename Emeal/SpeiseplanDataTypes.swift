@@ -8,17 +8,24 @@
 
 import UIKit
 
-struct Canteen {
+struct Canteen: Equatable {
 	let name: String!
 	let address: String!
 	let coords: (Double, Double)!
+}
+
+func ==(lhs: Canteen, rhs: Canteen) -> Bool {
+	if lhs.name == rhs.name {
+		return true
+	}
+	return false
 }
 
 struct Meal {
 	let id: Int!
 	let name: String!
 //	let category: String!
-	let price: PricePair!
+	let price: PricePair?
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var image: UIImage?

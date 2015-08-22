@@ -60,7 +60,7 @@ class OpenMensa {
 
 				var canteens = [Canteen]()
 				for c in json.arrayValue {
-					canteens.append(Canteen(id: c["id"].intValue, name: processCanteenName(c["name"].stringValue), city: c["city"].stringValue, address: processCanteenAddress(c["address"].stringValue), coords: (c["coordinates"][0].doubleValue, c["coordinates"][1].doubleValue)))
+//					canteens.appenteenAddress(c["address"].stringValue), coords: (c["coordinates"][0].doubleValue, c["coordinates"][1].doubleValue)))
 				}
 				completion(canteens: canteens, error: nil)
 			}
@@ -88,8 +88,8 @@ class OpenMensa {
 
 				var meals = [Meal]()
 				for m in json.arrayValue {
-					let meal = Meal(id: m["id"].intValue, name: m["name"].stringValue, category: m["category"].stringValue, price: (m["prices"]["students"].doubleValue, m["prices"]["employees"].doubleValue), ingredients: processIngredients(m["notes"].arrayValue))
-					meals.append(meal)
+//					let meal = Meal(id: m["id"].intValue, name: m["name"].stringValue, category: m["category"].stringValue, price: (m["prices"]["students"].doubleValue, m["prices"]["employees"].doubleValue), ingredients: processIngredients(m["notes"].arrayValue))
+//					meals.append(meal)
 				}
 				completion(meals: meals, error: nil)
 			}
