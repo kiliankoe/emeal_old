@@ -34,12 +34,22 @@ class CanteenTVC: UITableViewController, SpeiseplanDelegate {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("canteenCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("canteenCell")!
 
 		let thisCanteen = canteens[indexPath.row]
 
 		cell.textLabel?.text = thisCanteen.name
-		cell.detailTextLabel?.text = thisCanteen.address
+
+		switch thisCanteen.name {
+		case "Zeltschlösschen":
+			cell.imageView?.image = UIImage(named: "Zeltschloesschen")
+		case "Mensa Brühl":
+			cell.imageView?.image = UIImage(named: "Mensa Bruehl")
+		case "Mensa Görlitz":
+			cell.imageView?.image = UIImage(named: "Mensa Goerlitz")
+		default:
+			cell.imageView?.image = UIImage(named: thisCanteen.name)
+		}
 
         return cell
     }
