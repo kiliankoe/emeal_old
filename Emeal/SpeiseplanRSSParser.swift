@@ -156,13 +156,16 @@ func processTitle(title: String) -> (String, PricePair?) {
 		skipChars.formUnionWithCharacterSet(NSCharacterSet.punctuationCharacterSet())
 		skipChars.formUnionWithCharacterSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
 
-		let studentPrice = (priceElements[0].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
-		let employeePrice = (priceElements[1].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
-
-		return (name, (studentPrice, employeePrice))
-	} else {
-		return (name, nil)
+		if priceElements.count == 2 {
+			let studentPrice = (priceElements[0].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
+			let employeePrice = (priceElements[1].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
+			return (name, (studentPrice, employeePrice))
+		} else if priceElements.count == 1 {
+			let price = (priceElements[0].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
+			return (name, (price, nil))
+		}
 	}
+	return (name, nil)
 }
 
 func processLinkToID(link: String) -> Int {

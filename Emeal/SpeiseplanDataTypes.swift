@@ -25,13 +25,13 @@ struct Meal {
 	let id: Int!
 	let name: String!
 //	let category: String!
-	let price: PricePair?
+	let price: PricePair!
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var image: UIImage?
 }
 
-typealias PricePair = (student: Double, employee: Double)
+typealias PricePair = (student: Double?, employee: Double?)
 
 enum Ingredient {
 	case Alcohol, Vegetarian, Vegan, Pork, Beef, Garlic
