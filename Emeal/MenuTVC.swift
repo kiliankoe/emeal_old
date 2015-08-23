@@ -21,11 +21,6 @@ class MenuTVC: UITableViewController {
 		self.meals = speiseplan.getMeals(forCanteen: canteen)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -46,5 +41,11 @@ class MenuTVC: UITableViewController {
 		}
 
 		return cell
+	}
+
+	// MARK: - Table view delegate
+
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 }
