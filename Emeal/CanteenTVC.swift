@@ -17,11 +17,20 @@ class CanteenTVC: UITableViewController, SpeiseplanDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.navigationItem.title = "Canteens"
+		let daySelector = UISegmentedControl(items: ["Today", "Tomorrow"])
+		daySelector.sizeToFit()
+		daySelector.selectedSegmentIndex = 0
+		self.navigationItem.titleView = daySelector
+
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "update")
 
 		speiseplan.delegate = self
 		speiseplan.loadFeed()
     }
+
+	func update() {
+		speiseplan.loadFeed()
+	}
 
     // MARK: - Table view data source
 
