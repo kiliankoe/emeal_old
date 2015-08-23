@@ -104,7 +104,8 @@ class SpeiseplanRSSParser: NSObject, NSXMLParserDelegate {
 	}
 
 	func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-		if elementName == "item" && inItem {
+		switch elementName {
+		case "item" where inItem:
 			inItem = false
 			let newCanteen = Canteen(name: currentCanteenName, address: "", coords: (0.0, 0.0))
 			if !canteens.contains(newCanteen) {
@@ -112,9 +113,8 @@ class SpeiseplanRSSParser: NSObject, NSXMLParserDelegate {
 				meals[newCanteen.name] = []
 			}
 			meals[currentCanteenName]?.append(Meal(id: currentMealID, name: currentMealName, price: currentMealPrice, ingredients: [], allergens: [], image: nil))
-		} else if elementName == "title" && inItem {
-
-			// Every weekend a normal canteen doesn't offer anything and so isn't listed. 
+		case "title" where inItem:
+			// Every weekend a normal canteen doesn't offer anything and so isn't listed.
 			// But the Mensologie is no "normal canteen", because they have to specifically
 			// tell you that they don't have anything (┛ò__ó)┛彡┻━┻
 			if currentItemTitle == "Angebot im GOURMED: Kein Angebot" {
@@ -126,12 +126,13 @@ class SpeiseplanRSSParser: NSObject, NSXMLParserDelegate {
 			currentItemTitle = ""
 			currentMealName = itemElements.0
 			currentMealPrice = itemElements.1
-		} else if elementName == "link" && inItem {
+		case "link" where inItem:
 			currentMealID = processLinkToID(currentItemLink)
 			currentItemLink = ""
-		} else if elementName == "author" && inItem {
+		case "author" where inItem:
 			currentCanteenName = currentItemAuthor
 			currentItemAuthor = ""
+		default: break
 		}
 	}
 
@@ -147,7 +148,7 @@ func processTitle(title: String) -> (String, PricePair?) {
 	let titleElements = title.componentsSeparatedByString(" (")
 	let name = titleElements[0]
 
-	// Just in case we get something without a price
+	// If we get something without a price, don't stupidly try to do something with that data
 	if titleElements.count == 2 {
 		let priceElements = titleElements[1].componentsSeparatedByString("/")
 		let skipChars = NSMutableCharacterSet()
