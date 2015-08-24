@@ -25,6 +25,16 @@ class CanteenTVC: UITableViewController {
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "update")
 
 		update()
+
+		let meal = Meal(id: 153713, name: "", price: nil, ingredients: [], allergens: [], imageURL: nil)
+		speiseplan.mealDetails(forMeal: meal) { (result) -> Void in
+			switch result {
+			case .Success(let meal):
+				print(meal)
+			case .Failure(let error):
+				print(error)
+			}
+		}
     }
 
 	func update() {

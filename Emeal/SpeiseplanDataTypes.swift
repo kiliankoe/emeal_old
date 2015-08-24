@@ -28,7 +28,7 @@ struct Meal {
 	let price: PricePair!
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
-	var image: UIImage?
+	var imageURL: NSURL?
 }
 
 typealias PricePair = (student: Double?, employee: Double?)
@@ -52,4 +52,9 @@ enum Allergen: String {
 	case L = "Sulfit/Schwefeldioxid (L)"
 	case M = "Lupine (M)"
 	case N = "Weichtiere (N)"
+}
+
+enum SPResult<S,E> {
+	case Success(S)
+	case Failure(E)
 }
