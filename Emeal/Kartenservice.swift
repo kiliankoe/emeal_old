@@ -24,13 +24,6 @@ enum KartenserviceError: ErrorType {
 	case Closed
 }
 
-// MARK: URLs
-
-let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
-let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
-let ksUserDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
-let ksLoginURL = NSURL(string: "Login.php?ccsForm=Login", relativeToURL: ksBaseURL)!
-
 // MARK: -
 
 /// Custom Alamofire.Manager to use NSHTTPCookieStorage.sharedHTTPCookieStorage()
@@ -53,7 +46,7 @@ class Kartenservice {
 		let params = "login=\(user)&password=\(password)"
 		let paramsData = params.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 
-		let request = NSMutableURLRequest(URL: ksLoginURL)
+		let request = NSMutableURLRequest(URL: Constants.ksLoginURL)
 		request.HTTPMethod = "POST"
 		request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 		request.HTTPBody = paramsData
@@ -86,10 +79,10 @@ class Kartenservice {
 	*/
 	static func transactions(completion: (transactions: [Transaction], error: KartenserviceError?) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		alamo.request(.GET, ksTransactionsURL).responseData { (_, res, result) -> Void in
+		alamo.request(.GET, Constants.ksTransactionsURL).responseData { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(transactions: [], error: .Request); return }
-			guard res.URL?.path == ksTransactionsURL.path else { completion(transactions: [], error: .Authentication); return }
+			guard res.URL?.path == Constants.ksTransactionsURL.path else { completion(transactions: [], error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
 
 			if let data = result.value {
@@ -152,10 +145,10 @@ class Kartenservice {
 	*/
 	static func userdata(completion: (userdata: KSUserData?, error: KartenserviceError?) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		alamo.request(.GET, ksUserDataURL).responseData { (_, res, result) -> Void in
+		alamo.request(.GET, Constants.ksUserDataURL).responseData { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(userdata: nil, error: .Request); return }
-			guard res.URL?.path == ksUserDataURL.path else { completion(userdata: nil, error: .Authentication); return }
+			guard res.URL?.path == Constants.ksUserDataURL.path else { completion(userdata: nil, error: .Authentication); return }
 			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
 
 			if let data = result.value {
