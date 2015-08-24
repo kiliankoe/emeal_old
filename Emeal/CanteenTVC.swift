@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CanteenTVC: UITableViewController, SpeiseplanDelegate {
+class CanteenTVC: UITableViewController {
 
 	var canteens = [Canteen]()
 
@@ -24,12 +24,19 @@ class CanteenTVC: UITableViewController, SpeiseplanDelegate {
 
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "update")
 
-		speiseplan.delegate = self
-		speiseplan.loadFeed()
+		update()
     }
 
 	func update() {
-		speiseplan.loadFeed()
+		speiseplan.updateFromFeed { [unowned self] (error) -> Void in
+			if let error = error { print(error); return }
+			do {
+				self.canteens = try self.speiseplan.canteens()
+			} catch let error {
+				print(error)
+			}
+			self.tableView.reloadData()
+		}
 	}
 
     // MARK: - Table view data source
@@ -65,7 +72,6 @@ class CanteenTVC: UITableViewController, SpeiseplanDelegate {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "showMenu" {
 			let dest = segue.destinationViewController as! MenuTVC
@@ -78,20 +84,4 @@ class CanteenTVC: UITableViewController, SpeiseplanDelegate {
 		performSegueWithIdentifier("showMenu", sender: self)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
-
-	// MARK: - SpeiseplanDelegate
-
-	func SpeiseplanCanteens(canteens: [Canteen]) {
-		self.canteens = canteens
-		tableView.reloadData()
-	}
-
-	func SpeiseplanErrorEncountered(error: SpeiseplanError) {
-		print(error)
-	}
-
-	func SpeiseplanRSSErrorEncountered(error: SpeiseplanRSSError) {
-		print(error)
-	}
-
 }

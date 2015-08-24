@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="canteenCell" textLabel="6bC-Te-bwr" detailTextLabel="LF7-tS-A8l" imageView="i9W-XX-IlF" style="IBUITableViewCellStyleSubtitle" id="mVn-3G-xuj" customClass="CanteenCell" customModule="Emeal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="canteenCell" textLabel="6bC-Te-bwr" detailTextLabel="LF7-tS-A8l" imageView="i9W-XX-IlF" style="IBUITableViewCellStyleSubtitle" id="mVn-3G-xuj">
                                 <rect key="frame" x="0.0" y="92" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mVn-3G-xuj" id="LQR-7M-N1A">
@@ -23,21 +23,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Alte Mensa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6bC-Te-bwr">
-                                            <rect key="frame" x="104" y="9" width="81" height="19.5"/>
+                                            <rect key="frame" x="96" y="9" width="81" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Geöffnet (11:00 - 15:00 Uhr)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LF7-tS-A8l">
-                                            <rect key="frame" x="104" y="28.5" width="148.5" height="13.5"/>
+                                            <rect key="frame" x="96" y="28.5" width="148.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.094410337507724762" green="0.51380527019500732" blue="0.67649739980697632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Alte Mensa" id="i9W-XX-IlF">
-                                            <rect key="frame" x="15" y="0.0" width="74" height="49.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="66" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -349,7 +349,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alte Mensa" width="450" height="300"/>
+        <image name="Alte Mensa" width="400" height="300"/>
         <image name="emeal" width="32" height="32"/>
         <image name="menu" width="32" height="32"/>
         <image name="transactions" width="32" height="32"/>

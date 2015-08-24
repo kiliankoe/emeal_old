@@ -18,7 +18,7 @@ class MenuTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.meals = speiseplan.getMeals(forCanteen: canteen)
+		self.meals = try! speiseplan.meals(forCanteen: canteen.name)
     }
 
     // MARK: - Table view data source
