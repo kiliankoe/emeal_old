@@ -1,0 +1,24 @@
+PODS:
+  - Ji (1.1):
+    - Ji/Ji (= 1.1)
+  - Ji/Ji (1.1):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (1.1)
+
+DEPENDENCIES:
+  - Ji (from `git@github.com:honghaoz/Ji.git`, branch `swift-2.0`)
+
+EXTERNAL SOURCES:
+  Ji:
+    :branch: swift-2.0
+    :git: git@github.com:honghaoz/Ji.git
+
+CHECKOUT OPTIONS:
+  Ji:
+    :commit: df88a677ede077007f695b0fad696e140477e6d0
+    :git: git@github.com:honghaoz/Ji.git
+
+SPEC CHECKSUMS:
+  Ji: ba1026300109491e9340e01b65532ead43e0ebff
+
+COCOAPODS: 0.38.2
