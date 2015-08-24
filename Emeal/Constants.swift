@@ -12,7 +12,7 @@ struct Constants {
 	static let spFeedURL = NSURL(string: "https://www.studentenwerk-dresden.de/feeds/speiseplan.rss")!
 	static let spFeedURLTomorrow = NSURL(string: "?tag=morgen", relativeToURL: spFeedURL)!
 	static func spDetailURL(id: Int) -> NSURL {
-		return NSURL(string: "http://www.studentenwerk-dresden.de/mensen/speiseplan/details-\(id).html")!
+		return NSURL(string: "https://www.studentenwerk-dresden.de/mensen/speiseplan/details-\(id).html")!
 	}
 
 	static let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
