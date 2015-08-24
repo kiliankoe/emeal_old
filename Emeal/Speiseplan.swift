@@ -42,6 +42,9 @@ class Speiseplan {
 			guard res.statusCode == 200 else { completion(.Server); return }
 			guard let data = result.value else { completion(.Server); return }
 
+			self.savedCanteens = [Canteen]()
+			self.savedMeals = [String: [Meal]]()
+
 			let jiDoc = Ji(xmlData: data)
 
 			let dateFormatter = NSDateFormatter()
