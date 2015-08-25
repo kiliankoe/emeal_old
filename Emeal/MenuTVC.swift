@@ -13,12 +13,10 @@ class MenuTVC: UITableViewController {
 	var canteen: Canteen!
 	var meals = [Meal]()
 
-	let speiseplan = Speiseplan.shared
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.meals = try! speiseplan.meals(forCanteen: canteen.name)
+		self.title = canteen.name
     }
 
     // MARK: - Table view data source
@@ -46,6 +44,7 @@ class MenuTVC: UITableViewController {
 	// MARK: - Table view delegate
 
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		print(meals[indexPath.row])
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 }

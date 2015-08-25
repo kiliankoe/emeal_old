@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -49,8 +49,22 @@
                             <outlet property="delegate" destination="bq6-sV-ovl" id="ogX-k4-I0G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lhX-9B-v1F"/>
+                    <navigationItem key="navigationItem" id="lhX-9B-v1F">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MbW-G5-dno">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Today"/>
+                                <segment title="Tomorrow"/>
+                            </segments>
+                            <connections>
+                                <action selector="dayPickerValueChanged:" destination="bq6-sV-ovl" eventType="valueChanged" id="mov-8K-i5W"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
+                        <outlet property="dayPicker" destination="MbW-G5-dno" id="o4O-7k-PL1"/>
                         <segue destination="5Av-iA-ZVY" kind="show" identifier="showMenu" id="9LD-yP-dfp"/>
                     </connections>
                 </tableViewController>
