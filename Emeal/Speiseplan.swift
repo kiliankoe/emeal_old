@@ -40,6 +40,12 @@ class Speiseplan {
 		self.spURL = url
 	}
 
+	/**
+	Update the list of canteens and meals stored in the Speiseplan object by getting current data 
+	from the Studentenwerk website.
+
+	- parameter completion: handler that is called when done or receives an optional error
+	*/
 	func updateFromWebsite(completion: (SpeiseplanError?) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		Alamofire.request(.GET, spURL).responseData { [unowned self] (_, res, result) -> Void in
@@ -99,17 +105,39 @@ class Speiseplan {
 		}
 	}
 
+	/**
+	Get list of canteens from last refresh.
+	
+	- warning: Throws an OutdatedData error if data is older than 30 minutes and should be refreshed.
+
+	- returns: list of canteens
+	*/
 	func canteens() throws -> [Canteen] {
 		guard NSDate().timeIntervalSinceDate(self.lastUpdated) < 60*30 else { throw SpeiseplanError.OutdatedData }
 		return self.savedCanteens
 	}
 
+	/**
+	Get list of meals in the form of a dictionary with canteen names as keys.
+
+	- warning: Throws an OutdatedData error if data is older than 30 minutes and should be refreshed.
+
+	- returns: dictionary of meals
+	*/
 	func meals(forCanteen canteenName: String) throws -> [Meal] {
 		guard NSDate().timeIntervalSinceDate(self.lastUpdated) < 60*30 else { throw SpeiseplanError.OutdatedData }
 		guard let theseMeals = self.savedMeals[canteenName] else { throw SpeiseplanError.UnknownCanteen }
 		return theseMeals
 	}
 
+	/**
+	Update a meal value with an image URL (if available) and allergen data (if available) by
+	requesting additional data from the Studentenwerk website.
+	
+	- parameter meal: The meal value to be updated
+	- parameter completion: handler that is given a SPResult containing either the updated meal or 
+	an error
+	*/
 	func mealDetails(var forMeal meal: Meal, completion: (SPResult<Meal, SpeiseplanError>) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		Alamofire.request(.GET, Constants.spDetailURL(meal.id)).responseData { (_, res, result) -> Void in
@@ -179,6 +207,13 @@ class Speiseplan {
 
 // MARK: - Helper functions
 
+/**
+Process a single row of data from the Speiseplan into a meal value.
+
+- parameter row: A row of data
+
+- returns: A meal
+*/
 func processRowToMeal(row: [JiNode]) -> Meal? {
 	guard row.count == 3 else { return nil }
 	guard let mealIDURL = row[0].xPath("a").first?["href"] else { return nil }
@@ -203,6 +238,13 @@ func processRowToMeal(row: [JiNode]) -> Meal? {
 	return Meal(id: processMealID(mealIDURL), name: mealName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), price: price, ingredients: mealIngredients, allergens: [], imageURL: nil, isSoldOut: soldOut)
 }
 
+/**
+Process a price in string form into an SPPriceResult.
+
+- parameter string: string containing the prices from the Speiseplan
+
+- returns: An SPPriceResult
+*/
 func processPriceString(string: String) -> SPPriceResult {
 	if string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "ausverkauft" {
 		return .SoldOut
@@ -218,6 +260,13 @@ func processPriceString(string: String) -> SPPriceResult {
 	}
 }
 
+/**
+Process a price in string form into a PricePair. Used by processPriceString().
+
+- parameter string: string containing the prices
+
+- returns: PricePair
+*/
 func processPricePair(var string: String) -> PricePair {
 	string = string.stringByReplacingOccurrencesOfString(",", withString: ".")
 	let priceElements = string.componentsSeparatedByString("/")
@@ -235,6 +284,13 @@ func processPricePair(var string: String) -> PricePair {
 	return PricePair(studentPrice, employeePrice)
 }
 
+/**
+Process something like 'details-152702.html?pni=2' into just '152702'.
+
+- parameter string: The original URL string.
+
+- returns: An integer
+*/
 func processMealID(string: String) -> Int {
 	let anythingBut = NSMutableCharacterSet()
 	anythingBut.formUnionWithCharacterSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
@@ -246,6 +302,13 @@ func processMealID(string: String) -> Int {
 	return (stringElements[0].stringByTrimmingCharactersInSet(anythingBut) as NSString).integerValue
 }
 
+/**
+Process a list of XML nodes into a list of ingredients.
+
+- parameter nodeList: list of nodes
+
+- returns: list of ingredients
+*/
 func processIngredients(nodeList: [JiNode]) -> [Ingredient] {
 	var ingredients = [Ingredient]()
 	for ingredient in nodeList {
