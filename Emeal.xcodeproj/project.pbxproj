@@ -23,7 +23,6 @@
 		39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B111B81CDCC00AAB4E4 /* Array+combine.swift */; };
 		39987B151B82160000AAB4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B141B82160000AAB4E4 /* Constants.swift */; };
 		39A51A161B88D2B30076347E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A51A151B88D2B30076347E /* MealCell.swift */; };
-		39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F681B8001F8003F561E /* OpenMensa.swift */; };
 		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
 		39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */; };
@@ -104,7 +103,6 @@
 		39987B111B81CDCC00AAB4E4 /* Array+combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+combine.swift"; sourceTree = "<group>"; };
 		39987B141B82160000AAB4E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39A51A151B88D2B30076347E /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
-		39A73F681B8001F8003F561E /* OpenMensa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenMensa.swift; sourceTree = "<group>"; };
 		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 		39A73F6A1B8002F5003F561E /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				39A73F681B8001F8003F561E /* OpenMensa.swift */,
 				396285CE1B83CB9100A93781 /* Speiseplan.swift */,
 				39A73F6B1B80036C003F561E /* Kartenservice.swift */,
 			);
@@ -486,7 +483,6 @@
 				396270DC1B836A89007273A7 /* TransactionCell.swift in Sources */,
 				39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */,
 				396270DE1B836C1F007273A7 /* CanteenTVC.swift in Sources */,
-				39A73F691B8001F8003F561E /* OpenMensa.swift in Sources */,
 				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
 				396270E11B836D31007273A7 /* MenuTVC.swift in Sources */,
