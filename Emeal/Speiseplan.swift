@@ -100,35 +100,47 @@ class Speiseplan {
 			}
 
 			// Now for the ingredients
-			if let ingredientsList = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/ul[1]/li") {
-				for ingredient in ingredientsList {
-					switch ingredient.content {
-					case .Some("enthält Alkohol"):
-						meal.ingredients.append(.Alcohol)
-					case .Some("enthält kein Fleisch"):
-						meal.ingredients.append(.Vegetarian)
-					case .Some("ist vegan"):
-						meal.ingredients.append(.Vegan)
-					case .Some("enthält Rindfleisch"):
-						meal.ingredients.append(.Beef)
-					case .Some("enthält Schweinefleisch"):
-						meal.ingredients.append(.Pork)
-					case .Some("enthält Knoblauch"):
-						meal.ingredients.append(.Garlic)
-					default:
-						NSLog("Illegal ingredient: \(ingredient.content)")
+			if let ingredientsList = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/ul[1]/li"), let title = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/h2[1]") {
+				if title.first?.content == "Allgemeine Informationen zur Speise:" {
+					for ingredient in ingredientsList {
+						if let ing = Ingredient(rawValue: ingredient.content!) {
+							meal.ingredients.append(ing)
+						} else {
+							NSLog("Unknown ingredient for meal \(meal.id): \(ingredient.content)")
+						}
 					}
+				} else {
+					NSLog("Meal \(meal.id) has no list of ingredients")
 				}
 			}
 
 			// And the allergens
-			if let allergensList = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/ul[2]/li") {
-				for allergen in allergensList {
-					if let all = Allergen(rawValue: allergen.content!) {
-						meal.allergens.append(all)
-					} else {
-						NSLog("Illegal allergen: \(allergen.content)")
+			if let allergensList = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/ul[2]/li"), let title = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/h2[2]") {
+				if title.first?.content == "Infos zu enthaltenen Allergenen[2]:" {
+					for allergen in allergensList {
+						if let all = Allergen(rawValue: allergen.content!) {
+							meal.allergens.append(all)
+						} else {
+							NSLog("Unknown allergen for meal \(meal.id): \(allergen.content)")
+						}
 					}
+				} else {
+					NSLog("Meal \(meal.id) has no list of allergens")
+				}
+			}
+
+			// And the check if this is vegan or not, because that has to specified elsewhere and not where it belongs (┛ò__ó)┛彡┻━┻
+			if let additionalInfos = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/ul[3]/li"), let title = jiDoc?.xPath("//div[@id='speiseplandetailsrechts']/h2[3]") {
+				if title.first?.content == "Weitere Informationen:" {
+					for info in additionalInfos {
+						if let inf = Ingredient(rawValue: info.content!) {
+							meal.ingredients.append(inf)
+						} else {
+							NSLog("Unknown additional info for meal \(meal.id): \(info.content)")
+						}
+					}
+				} else {
+					NSLog("Meal \(meal.id) has no list of additional information")
 				}
 			}
 

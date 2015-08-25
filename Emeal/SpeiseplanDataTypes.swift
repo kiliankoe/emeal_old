@@ -33,8 +33,14 @@ struct Meal {
 
 typealias PricePair = (student: Double?, employee: Double?)
 
-enum Ingredient {
-	case Alcohol, Vegetarian, Vegan, Pork, Beef, Garlic
+enum Ingredient:String {
+	case Alcohol = "enthält Alkohol"
+	case Vegetarian = "Menü enthält kein Fleisch"
+	case Vegan = "vegan"
+	case Pork = "enthält Schweinefleisch"
+	case Beef = "enthält Rindfleisch"
+	case Garlic = "enthält Knoblauch"
+	case Gelantine = "enthält Gelantine"
 }
 
 enum Allergen: String {
