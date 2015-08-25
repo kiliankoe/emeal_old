@@ -29,18 +29,19 @@ struct Meal {
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var imageURL: NSURL?
+	var isSoldOut: Bool!
 }
 
 typealias PricePair = (student: Double?, employee: Double?)
 
 enum Ingredient:String {
-	case Alcohol = "enthält Alkohol"
+	case Alcohol = "Menü enthält Alkohol"
 	case Vegetarian = "Menü enthält kein Fleisch"
-	case Vegan = "vegan"
-	case Pork = "enthält Schweinefleisch"
-	case Beef = "enthält Rindfleisch"
-	case Garlic = "enthält Knoblauch"
-	case Gelantine = "enthält Gelantine"
+	case Vegan = "Menü ist vegan"
+	case Pork = "Menü enthält Schweinefleisch"
+	case Beef = "Menü enthält Rindfleisch"
+	case Garlic = "Menü enthält Knoblauch"
+//	case Gelantine = "Menü enthält Gelantine"
 }
 
 enum Allergen: String {
@@ -63,4 +64,10 @@ enum Allergen: String {
 enum SPResult<S,E> {
 	case Success(S)
 	case Failure(E)
+}
+
+enum SPPriceResult {
+	case Price(PricePair)
+	case SoldOut
+	case None
 }

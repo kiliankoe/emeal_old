@@ -27,16 +27,22 @@ enum SpeiseplanError: ErrorType {
 
 class Speiseplan {
 
+	let spURL: NSURL!
+
 	var savedCanteens = [Canteen]()
 	var savedMeals = [String: [Meal]]()
 	var lastUpdated = NSDate()
 
-	static let shared = Speiseplan()
-	private init() {}
+	static let today = Speiseplan(url: Constants.spMainURL)
+	static let tomorrow = Speiseplan(url: Constants.spMainTomorrowURL)
 
-	func updateFromFeed(completion: (SpeiseplanError?) -> Void) {
+	init(url: NSURL) {
+		self.spURL = url
+	}
+
+	func updateFromWebsite(completion: (SpeiseplanError?) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		Alamofire.request(.GET, Constants.spFeedURL).responseData { [unowned self] (_, res, result) -> Void in
+		Alamofire.request(.GET, spURL).responseData { [unowned self] (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(.Request); return }
 			guard res.statusCode == 200 else { completion(.Server); return }
@@ -45,25 +51,47 @@ class Speiseplan {
 			self.savedCanteens = [Canteen]()
 			self.savedMeals = [String: [Meal]]()
 
-			let jiDoc = Ji(xmlData: data)
+			let jiDoc = Ji(htmlData: data)
 
-			let dateFormatter = NSDateFormatter()
-			// "Mon, 24 Aug 2015 13:52:33 +0200"
-			dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZZ"
+			guard let speiseplaene = jiDoc?.xPath("//table[@class='speiseplan']") else { completion(.Server); return }
+			for speiseplan in speiseplaene {
 
-			let items = jiDoc?.xPath("//item")
-			for item in items! {
-				if let title = item.xPath("title").first?.content, let author = item.xPath("author").first?.content, let link = item.xPath("link").first?.content {
-					let canteen = Canteen(name: author, address: "", coords: (1.0, 1.0))
-					let mealTitleElements = processTitle(title)
-					let meal = Meal(id: processLinkToID(link), name: mealTitleElements.0, price: mealTitleElements.1, ingredients: [], allergens: [], imageURL: nil)
-
-					if !self.savedCanteens.contains(canteen) {
-						self.savedCanteens.append(canteen)
-						self.savedMeals[canteen.name] = []
+				// Read canteen name
+				if let canteenName = speiseplan.xPath("thead//th[1]").first?.content {
+					let canteen: Canteen
+					if canteenName == "BioMensa U-Boot (Bio-Code-Nummer: DE-ÖKO-021)" {
+						// There always has to be a special snowflake somewhere...
+						canteen = Canteen(name: "BioMensa U-Boot", address: "", coords: (1.0, 1.0))
+					} else {
+						canteen = Canteen(name: canteenName, address: "", coords: (1.0, 1.0))
 					}
 
-					self.savedMeals[canteen.name]?.append(meal)
+					self.savedCanteens.append(canteen)
+					self.savedMeals[canteen.name] = []
+
+					// Read meals. There's two tables to gather these from. Starting with the first one
+					let firstRows = speiseplan.xPath("tbody[1]/tr")
+					for tr in firstRows {
+						let rowData = tr.xPath("td")
+						let meal = processRowToMeal(rowData)
+						if let meal = meal {
+							self.savedMeals[canteen.name]?.append(meal)
+						}
+					}
+
+					let hiddenRows = speiseplan.xPath("tbody[4]/tr")
+					for tr in hiddenRows {
+						let rowData = tr.xPath("td")
+						let meal = processRowToMeal(rowData)
+						if let meal = meal {
+							self.savedMeals[canteen.name]?.append(meal)
+						}
+					}
+
+				} else {
+					// There should never be a table.speiseplan without a listed canteen name, I hope...
+					completion(.Server)
+					return
 				}
 			}
 
@@ -151,34 +179,83 @@ class Speiseplan {
 
 // MARK: - Helper functions
 
-func processTitle(title: String) -> (String, PricePair?) {
-	// FIXME: If something isn't available anymore the price is substituted with "(ausverkauft)"
-	let titleElements = title.componentsSeparatedByString(" (")
-	let name = titleElements[0]
+func processRowToMeal(row: [JiNode]) -> Meal? {
+	guard row.count == 3 else { return nil }
+	guard let mealIDURL = row[0].xPath("a").first?["href"] else { return nil }
+	guard let mealName = row[0].content else { return nil }
+	guard let mealPriceString = row[2].content else { return nil }
+	let mealIngredients = processIngredients(row[1].xPath("a/img"))
 
-	// If we get something without a price, don't stupidly try to do something with that data
-	if titleElements.count == 2 {
-		let priceElements = titleElements[1].componentsSeparatedByString("/")
-		let skipChars = NSMutableCharacterSet()
-		skipChars.formUnionWithCharacterSet(NSCharacterSet.letterCharacterSet())
-		skipChars.formUnionWithCharacterSet(NSCharacterSet.punctuationCharacterSet())
-		skipChars.formUnionWithCharacterSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-
-		if priceElements.count == 2 {
-			let studentPrice = (priceElements[0].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
-			let employeePrice = (priceElements[1].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
-			return (name, (studentPrice, employeePrice))
-		} else if priceElements.count == 1 {
-			let price = (priceElements[0].stringByTrimmingCharactersInSet(skipChars) as NSString).doubleValue
-			return (name, (price, nil))
-		}
+	let price: PricePair?
+	let soldOut: Bool
+	switch processPriceString(mealPriceString) {
+	case .None:
+		price = nil
+		soldOut = false
+	case .SoldOut:
+		price = nil
+		soldOut = true
+	case .Price(student: let studentPrice, employee: let employeePrice):
+		price = PricePair(studentPrice, employeePrice)
+		soldOut = false
 	}
-	return (name, nil)
+
+	return Meal(id: processMealID(mealIDURL), name: mealName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), price: price, ingredients: mealIngredients, allergens: [], imageURL: nil, isSoldOut: soldOut)
 }
 
-func processLinkToID(link: String) -> Int {
-	let skipChars = NSMutableCharacterSet()
-	skipChars.formUnionWithCharacterSet(NSCharacterSet.letterCharacterSet())
-	skipChars.formUnionWithCharacterSet(NSCharacterSet.punctuationCharacterSet())
-	return (link.stringByTrimmingCharactersInSet(skipChars) as NSString).integerValue
+func processPriceString(string: String) -> SPPriceResult {
+	if string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "ausverkauft" {
+		return .SoldOut
+	}
+	switch string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) {
+	case "ausverkauft":
+		return .SoldOut
+	case "":
+		return .None
+	default:
+		let pricePair = processPricePair(string)
+		return .Price(student: pricePair.student, employee: pricePair.employee)
+	}
+}
+
+func processPricePair(var string: String) -> PricePair {
+	string = string.stringByReplacingOccurrencesOfString(",", withString: ".")
+	let priceElements = string.componentsSeparatedByString("/")
+	guard priceElements.count <= 2 else { return PricePair(nil, nil) }
+
+	let studentPrice: Double?
+	let employeePrice: Double?
+	if priceElements.count == 1 {
+		studentPrice = (priceElements[0] as NSString).doubleValue
+		employeePrice = studentPrice
+	} else {
+		studentPrice = (priceElements[0] as NSString).doubleValue
+		employeePrice = (priceElements[1] as NSString).doubleValue
+	}
+	return PricePair(studentPrice, employeePrice)
+}
+
+func processMealID(string: String) -> Int {
+	let anythingBut = NSMutableCharacterSet()
+	anythingBut.formUnionWithCharacterSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+	anythingBut.formUnionWithCharacterSet(NSCharacterSet.letterCharacterSet())
+	anythingBut.formUnionWithCharacterSet(NSCharacterSet.punctuationCharacterSet())
+
+	let stringElements = string.componentsSeparatedByString(".html")
+
+	return (stringElements[0].stringByTrimmingCharactersInSet(anythingBut) as NSString).integerValue
+}
+
+func processIngredients(nodeList: [JiNode]) -> [Ingredient] {
+	var ingredients = [Ingredient]()
+	for ingredient in nodeList {
+		if let altText = ingredient["alt"] {
+			if let ing = Ingredient(rawValue: altText) {
+				ingredients.append(ing)
+			} else {
+				NSLog("Unknown ingredient: \(altText)")
+			}
+		}
+	}
+	return ingredients
 }
