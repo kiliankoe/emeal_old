@@ -23,6 +23,7 @@
 		39987B151B82160000AAB4E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39987B141B82160000AAB4E4 /* Constants.swift */; };
 		39A51A161B88D2B30076347E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A51A151B88D2B30076347E /* MealCell.swift */; };
 		39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A73F6B1B80036C003F561E /* Kartenservice.swift */; };
+		39C0C79D1B8DFC8B00F21520 /* Double+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C0C79C1B8DFC8B00F21520 /* Double+Format.swift */; settings = {ASSET_TAGS = (); }; };
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
 		39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */; };
 		39CD15E01B813AC60065A7CA /* SpeiseplanDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */; };
@@ -100,6 +101,7 @@
 		39987B141B82160000AAB4E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39A51A151B88D2B30076347E /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		39A73F6B1B80036C003F561E /* Kartenservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kartenservice.swift; sourceTree = "<group>"; };
+		39C0C79C1B8DFC8B00F21520 /* Double+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Format.swift"; sourceTree = "<group>"; };
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeiseplanDataTypes.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				39987B111B81CDCC00AAB4E4 /* Array+combine.swift */,
+				39C0C79C1B8DFC8B00F21520 /* Double+Format.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
 				396270E11B836D31007273A7 /* MenuTVC.swift in Sources */,
 				39CD15E01B813AC60065A7CA /* SpeiseplanDataTypes.swift in Sources */,
+				39C0C79D1B8DFC8B00F21520 /* Double+Format.swift in Sources */,
 				39987B151B82160000AAB4E4 /* Constants.swift in Sources */,
 				39A51A161B88D2B30076347E /* MealCell.swift in Sources */,
 				396285CF1B83CB9100A93781 /* Speiseplan.swift in Sources */,

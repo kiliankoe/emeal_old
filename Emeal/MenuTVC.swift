@@ -17,7 +17,14 @@ class MenuTVC: UITableViewController {
         super.viewDidLoad()
 
 		self.title = canteen.name
+
+//		configureTableView()
     }
+
+	func configureTableView() {
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 100.0
+	}
 
     // MARK: - Table view data source
 
@@ -35,7 +42,37 @@ class MenuTVC: UITableViewController {
 
 		cell.nameLabel.text = thisMeal.name
 		if let prices = thisMeal.price {
-			cell.priceLabel.text = "\(prices.student)€"
+			let price = prices.student.format(".2")
+			cell.priceLabel.text = "\(price)€"
+		} else {
+			cell.priceLabel.text = ""
+		}
+
+		if thisMeal.isSoldOut {
+			cell.nameLabel.textColor = UIColor.lightGrayColor()
+		} else {
+			cell.nameLabel.textColor = UIColor.blackColor()
+		}
+
+		for image in cell.ingredientImages {
+			image.image = nil
+		}
+
+		for ingredient in thisMeal.ingredients {
+			switch ingredient {
+			case .Alcohol:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.alcohol")
+			case .Beef:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.beef")
+			case .Garlic:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.garlic")
+			case .Pork:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.pork")
+			case .Vegan:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.vegan")
+			case .Vegetarian:
+				nextFreeImage(cell.ingredientImages).image = UIImage(named: "ingredient.vegetarian")
+			}
 		}
 
 		return cell
@@ -48,5 +85,16 @@ class MenuTVC: UITableViewController {
 		ac.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
 		self.presentViewController(ac, animated: true, completion: nil)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+
+	// MARK: - Helpers
+
+	func nextFreeImage(images: [UIImageView]) -> UIImageView {
+		for image in images {
+			if image.image == nil {
+				return image
+			}
+		}
+		return images.last!
 	}
 }

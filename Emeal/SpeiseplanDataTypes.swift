@@ -29,7 +29,7 @@ struct Meal {
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var imageURL: NSURL?
-	var isSoldOut: Bool!
+	var isSoldOut: Bool
 }
 
 typealias PricePair = (student: Double, employee: Double)
