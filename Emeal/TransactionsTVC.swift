@@ -76,7 +76,9 @@ class TransactionsTVC: UITableViewController {
 	// MARK: - Table view delegate
 
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print(transactions[indexPath.row])
+		let ac = UIAlertController(title: "Transaction", message: "\(transactions[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
+		ac.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+		self.presentViewController(ac, animated: true, completion: nil)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 

@@ -44,7 +44,9 @@ class MenuTVC: UITableViewController {
 	// MARK: - Table view delegate
 
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print(meals[indexPath.row])
+		let ac = UIAlertController(title: "Meal", message: "\(meals[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
+		ac.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+		self.presentViewController(ac, animated: true, completion: nil)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 }
