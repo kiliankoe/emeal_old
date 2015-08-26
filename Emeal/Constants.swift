@@ -15,6 +15,9 @@ struct Constants {
 	static func spDetailURL(id: Int) -> NSURL {
 		return NSURL(string: "https://www.studentenwerk-dresden.de/mensen/speiseplan/details-\(id).html")!
 	}
+	static func spMobileDetailURL(id: Int) -> NSURL {
+		return NSURL(string: "https://www.m.studentenwerk-dresden.de/mensen/speiseplan/details-\(id).html")!
+	}
 
 	static let spMainURLEgg = NSURL(string: "http://www.studentenwerk-dresden.de.saxophone.parallelnetz.de/mensen/speiseplan/")!
 	static let spMainTomorrowURLEgg = NSURL(string: "morgen.html", relativeToURL: spMainURLEgg)!

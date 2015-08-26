@@ -25,9 +25,28 @@ class MealTVC: UITableViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: "openDetailPageInBrowser")
 		dataSource.tableView = tableView
 
+		Speiseplan.mealDetails(forMeal: meal!, completion: { [unowned self] (result) -> Void in
+			switch result {
+			case .Success(let meal):
+				self.meal = meal
+			case .Failure(let error):
+				print(error)
+			}
+
+			let imageRow = Row(context: ["imageURL": self.meal?.imageURL], cellClass: MealDetailImageCell.self)
+			self.dataSource.sections[0].rows.insert(imageRow, atIndex: 0)
+
+			if self.meal?.allergens.count > 0 {
+				var allergensSection = Section(header: "Allergens")
+				for allergen in self.meal!.allergens {
+					allergensSection.rows.append(Row(text: allergen.rawValue))
+				}
+				self.dataSource.sections.append(allergensSection)
+			}
+		})
+
 		dataSource.sections = [
 			Section(header: "Meal", rows: [
-				Row(text: "Image", cellClass: MealDetailImageCell.self, detailText: "foobar"),
 				Row(text: meal?.name)
 			])
 		]

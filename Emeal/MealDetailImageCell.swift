@@ -25,7 +25,9 @@ class MealDetailImageCell: UITableViewCell, CellType {
     }
 
 	func configure(row row: Row) {
-
+//		print((row.context!["imageURL"]! as NSURL?)!)
+//		let data = NSData(contentsOfURL: (row.context!["imageURL"]! as! NSURL))
+//		self.mealImageView.image = UIImage(data: data!)
 	}
 
 }
