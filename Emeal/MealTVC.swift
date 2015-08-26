@@ -22,6 +22,7 @@ class MealTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		title = meal?.name
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: "openDetailPageInBrowser")
 		dataSource.tableView = tableView
 
 		dataSource.sections = [
@@ -57,6 +58,10 @@ class MealTVC: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+	func openDetailPageInBrowser() {
+		UIApplication.sharedApplication().openURL(Constants.spDetailURL(meal!.id))
+	}
 
     // MARK: - Table view data source
 
