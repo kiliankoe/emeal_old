@@ -25,14 +25,14 @@ struct Meal {
 	let id: Int!
 	let name: String!
 //	let category: String!
-	let price: PricePair!
+	let price: PricePair?
 	var ingredients: [Ingredient]!
 	var allergens: [Allergen]!
 	var imageURL: NSURL?
 	var isSoldOut: Bool!
 }
 
-typealias PricePair = (student: Double?, employee: Double?)
+typealias PricePair = (student: Double, employee: Double)
 
 enum Ingredient:String {
 	case Alcohol = "Menü enthält Alkohol"
@@ -67,7 +67,7 @@ enum SPResult<S,E> {
 }
 
 enum SPPriceResult {
-	case Price(PricePair)
+	case Price(PricePair?)
 	case SoldOut
 	case None
 }

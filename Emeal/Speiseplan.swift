@@ -138,7 +138,7 @@ class Speiseplan {
 	- parameter completion: handler that is given a SPResult containing either the updated meal or 
 	an error
 	*/
-	func mealDetails(var forMeal meal: Meal, completion: (SPResult<Meal, SpeiseplanError>) -> Void) {
+	static func mealDetails(var forMeal meal: Meal, completion: (SPResult<Meal, SpeiseplanError>) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		Alamofire.request(.GET, Constants.spDetailURL(meal.id)).responseData { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
@@ -230,8 +230,8 @@ func processRowToMeal(row: [JiNode]) -> Meal? {
 	case .SoldOut:
 		price = nil
 		soldOut = true
-	case .Price(student: let studentPrice, employee: let employeePrice):
-		price = PricePair(studentPrice, employeePrice)
+	case .Price(let pricePair):
+		price = pricePair
 		soldOut = false
 	}
 
@@ -255,8 +255,10 @@ func processPriceString(string: String) -> SPPriceResult {
 	case "":
 		return .None
 	default:
-		let pricePair = processPricePair(string)
-		return .Price(student: pricePair.student, employee: pricePair.employee)
+		if let pricePair = processPricePair(string) {
+			return .Price(pricePair)
+		}
+		return SPPriceResult.Price(nil)
 	}
 }
 
@@ -267,13 +269,13 @@ Process a price in string form into a PricePair. Used by processPriceString().
 
 - returns: PricePair
 */
-func processPricePair(var string: String) -> PricePair {
+func processPricePair(var string: String) -> PricePair? {
 	string = string.stringByReplacingOccurrencesOfString(",", withString: ".")
 	let priceElements = string.componentsSeparatedByString("/")
-	guard priceElements.count <= 2 else { return PricePair(nil, nil) }
+	guard priceElements.count <= 2 else { return nil }
 
-	let studentPrice: Double?
-	let employeePrice: Double?
+	let studentPrice: Double
+	let employeePrice: Double
 	if priceElements.count == 1 {
 		studentPrice = (priceElements[0] as NSString).doubleValue
 		employeePrice = studentPrice

@@ -24,8 +24,8 @@ class CanteenTVC: UITableViewController {
 
 		update()
 
-//		let meal = Meal(id: 152724, name: "", price: nil, ingredients: [], allergens: [], imageURL: nil)
-//		speiseplan.mealDetails(forMeal: meal) { (result) -> Void in
+//		let meal = Meal(id: 153700, name: "", price: nil, ingredients: [], allergens: [], imageURL: nil, isSoldOut: false)
+//		Speiseplan.mealDetails(forMeal: meal) { (result) -> Void in
 //			switch result {
 //			case .Success(let meal):
 //				print(meal)
