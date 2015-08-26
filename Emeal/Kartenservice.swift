@@ -269,6 +269,11 @@ Utility function to convert a tablerow from the Kartenservice transactions view 
 - returns: TransactionElement value
 */
 func createTransactionElement(tr: [JiNode]) -> TransactionElement {
+
+	// Deposits are not specifically marked as such, so we're checking the price to determine that
+	if readPrice(tr[6].content!) < 0 {
+		return TransactionElement(name: tr[5].content!, price: readPrice(tr[6].content!, makePositive: true))
+	}
 	return TransactionElement(name: tr[5].content!, price: readPrice(tr[6].content!))
 }
 
