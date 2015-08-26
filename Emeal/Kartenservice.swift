@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import HTMLReader
+import Ji
 
 /**
 Errors specific to Kartenservice
@@ -86,8 +86,8 @@ class Kartenservice {
 			guard res.statusCode == 200 else { completion(transactions: [], error: .Server); return }
 
 			if let data = result.value {
-				let document = HTMLDocument(data: data, contentTypeHeader: (res.allHeaderFields["Content-Type"] as! String))
-				let transactionsTRs = document.nodesMatchingSelector("table.grid tr")
+				let document = Ji(htmlData: data, encoding: NSUTF8StringEncoding)
+				let transactionsTRs = document?.xPath("//table[@class='grid']//tr")
 
 				var transactionsList = [Transaction]()
 
@@ -96,12 +96,12 @@ class Kartenservice {
 
 				// Ignoring the first two and the last value, as these are not transactions.
 				// Fingers crossed that the format never changes :P
-				for i in 2..<transactionsTRs.count-1 {
-					let tds = transactionsTRs[i].nodesMatchingSelector("td")
+				for i in 2..<transactionsTRs!.count-1 {
+					let tds = transactionsTRs![i].xPath("td")
 
 					// This is a bit tricky. TDs are either identifiers for a new `Transaction` or additions in the
 					// form of `TransactionElement`. This can be determined by checking if a date is present in tds[0].
-					if tds[0].textContent != "" {
+					if tds[0].content != "" {
 						if !lastTransaction.elements.isEmpty {
 							transactionsList.append(lastTransaction)
 						}
@@ -152,17 +152,19 @@ class Kartenservice {
 			guard res.statusCode == 200 else { completion(userdata: nil, error: .Server); return }
 
 			if let data = result.value {
-				let document = HTMLDocument(data: data, contentTypeHeader: (res.allHeaderFields["Content-Type"] as! String))
+				let document = Ji(htmlData: data, encoding: NSUTF8StringEncoding)
 
-				let controls = document.nodesMatchingSelector("form#KAKARTE2 tr.Controls")
+				let controls = document?.xPath("//form[@id='KAKARTE2']//tr[@class='Controls']")
 
-				if let cardNumber        = Int(controls[0].childElementNodes[1].textContent),
-				       message           = controls[1].childElementNodes[1].textContent,
-				       bankCode          = Int(controls[2].childElementNodes[1].textContent),
-				       bankAccountNumber = controls[3].childElementNodes[1].textContent,
-					   chargeAmount      = controls[4].childElementNodes[1].childElementNodes[0]["value"] as? String,
-					   limitAmount       = controls[5].childElementNodes[1].childElementNodes[0]["value"] as? String
+				if let cardNumberString	= controls?[0].xPath("td[2]").first?.content,
+					message				= controls?[1].xPath("td[2]").first?.content,
+					bankCodeString		= controls?[2].xPath("td[2]").first?.content,
+					bankAccountNumber	= controls?[3].xPath("td[2]").first?.content!,
+					chargeAmount		= controls?[4].xPath("td[2]/input").first!["value"],
+					limitAmount			= controls?[5].xPath("td[2]/input").first!["value"]
 				{
+					let cardNumber = Int(cardNumberString)
+					let bankCode = Int(bankCodeString)
 					let userData = KSUserData(cardNumber: cardNumber, message: message, bankCode: bankCode, bankAccountNumber: bankAccountNumber, chargeAmount: readPrice(chargeAmount), limitAmount: readPrice(limitAmount))
 					completion(userdata: userData, error: nil)
 					return
@@ -247,17 +249,17 @@ Utility function to convert a tablerow from the Kartenservice transactions view 
 - parameter placeholder: optional bool
 - returns: Transaction value
 */
-func createTransaction(tr: [AnyObject], placeholder: Bool = false) -> Transaction {
+func createTransaction(tr: [JiNode], placeholder: Bool = false) -> Transaction {
 	if placeholder {
 		return Transaction(date: NSDate(), location: "", register: "", type: .Article, receiptNum: "", elements: [], totalPrice: -1.0)
 	}
 
 	// Deposits are not specifically marked as such, so we're checking the price to determine that
-	if readPrice(tr[7].textContent) < 0 {
-		return Transaction(date: readDate(tr[0].textContent), location: tr[1].textContent, register: tr[2].textContent, type: .Charge, receiptNum: tr[4].textContent, elements: [], totalPrice: readPrice(tr[7].textContent, makePositive: true))
+	if readPrice(tr[7].content!) < 0 {
+		return Transaction(date: readDate(tr[0].content!), location: tr[1].content!, register: tr[2].content!, type: .Charge, receiptNum: tr[4].content!, elements: [], totalPrice: readPrice(tr[7].content!, makePositive: true))
 	}
 
-	return Transaction(date: readDate(tr[0].textContent), location: tr[1].textContent, register: tr[2].textContent, type: readType(tr[3].textContent), receiptNum: tr[4].textContent, elements: [], totalPrice: readPrice(tr[7].textContent))
+	return Transaction(date: readDate(tr[0].content!), location: tr[1].content!, register: tr[2].content!, type: readType(tr[3].content!), receiptNum: tr[4].content!, elements: [], totalPrice: readPrice(tr[7].content!))
 }
 
 /**
@@ -266,8 +268,8 @@ Utility function to convert a tablerow from the Kartenservice transactions view 
 - parameter tr: tablerow
 - returns: TransactionElement value
 */
-func createTransactionElement(tr: [AnyObject]) -> TransactionElement {
-	return TransactionElement(name: tr[5].textContent, price: readPrice(tr[6].textContent))
+func createTransactionElement(tr: [JiNode]) -> TransactionElement {
+	return TransactionElement(name: tr[5].content!, price: readPrice(tr[6].content!))
 }
 
 /// NSDateFormatter that can handle `dd.MM.yyyy HH:mm:ss`
