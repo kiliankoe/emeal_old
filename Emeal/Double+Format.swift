@@ -9,7 +9,7 @@
 import Foundation
 
 extension Double {
-	func format(f: String) -> String {
+	func format(f: Double) -> String {
 		return NSString(format: "%\(f)f", self) as String
 	}
 }

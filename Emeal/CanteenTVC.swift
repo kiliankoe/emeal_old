@@ -44,6 +44,7 @@ class CanteenTVC: UITableViewController {
 				print(error)
 			}
 			self.tableView.reloadData()
+			self.tableView.flashScrollIndicators()
 		}
 		spTomorrow.updateFromWebsite { (error) -> Void in
 			if let error = error { print(error); return }

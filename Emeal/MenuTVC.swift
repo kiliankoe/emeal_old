@@ -42,7 +42,7 @@ class MenuTVC: UITableViewController {
 
 		cell.nameLabel.text = thisMeal.name
 		if let prices = thisMeal.price {
-			let price = prices.student.format(".2")
+			let price = prices.student.format(0.2)
 			cell.priceLabel.text = "\(price)€"
 		} else {
 			cell.priceLabel.text = ""
@@ -81,10 +81,20 @@ class MenuTVC: UITableViewController {
 	// MARK: - Table view delegate
 
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let ac = UIAlertController(title: "Meal", message: "\(meals[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
-		ac.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
-		self.presentViewController(ac, animated: true, completion: nil)
+		performSegueWithIdentifier("showMeal", sender: self)
+//		let ac = UIAlertController(title: "Meal", message: "\(meals[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
+//		ac.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+//		self.presentViewController(ac, animated: true, completion: nil)
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+
+	// MARK: - Navigation
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showMeal" {
+			let dest = segue.destinationViewController as! MealTVC
+			dest.meal = meals[tableView.indexPathForSelectedRow!.row]
+		}
 	}
 
 	// MARK: - Helpers
