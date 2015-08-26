@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		395069691B824819000F87F9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 395069681B824819000F87F9 /* Cartfile */; };
-		3950696B1B8248F2000F87F9 /* HTMLReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3950696A1B8248F2000F87F9 /* HTMLReader.framework */; };
 		3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */; };
 		3958DFD11B7FBD6F00B1E6A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFCF1B7FBD6F00B1E6A1 /* Main.storyboard */; };
 		3958DFD31B7FBD6F00B1E6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3958DFD21B7FBD6F00B1E6A1 /* Assets.xcassets */; };
@@ -29,7 +28,6 @@
 		39CD15E01B813AC60065A7CA /* SpeiseplanDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */; };
 		39D51A7A1B875C63004A62D2 /* KartenserviceDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D51A791B875C63004A62D2 /* KartenserviceDataTypes.swift */; };
 		39F30AB21B8B92B300E6819E /* Alamofire.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AAE1B8B92B300E6819E /* Alamofire.framework.dSYM */; };
-		39F30AB31B8B92B300E6819E /* HTMLReader.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AAF1B8B92B300E6819E /* HTMLReader.framework.dSYM */; };
 		39F30AB41B8B92B300E6819E /* Result.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AB01B8B92B300E6819E /* Result.framework.dSYM */; };
 		39F30AB51B8B92B300E6819E /* SwiftyJSON.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AB11B8B92B300E6819E /* SwiftyJSON.framework.dSYM */; };
 		39FF769D1B8B697D00576573 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FF769C1B8B697D00576573 /* Result.framework */; };
@@ -71,7 +69,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				39F30AB21B8B92B300E6819E /* Alamofire.framework.dSYM in Copy Carthage symbol files */,
-				39F30AB31B8B92B300E6819E /* HTMLReader.framework.dSYM in Copy Carthage symbol files */,
 				39F30AB41B8B92B300E6819E /* Result.framework.dSYM in Copy Carthage symbol files */,
 				39F30AB51B8B92B300E6819E /* SwiftyJSON.framework.dSYM in Copy Carthage symbol files */,
 			);
@@ -82,7 +79,6 @@
 
 /* Begin PBXFileReference section */
 		395069681B824819000F87F9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		3950696A1B8248F2000F87F9 /* HTMLReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTMLReader.framework; path = Carthage/Build/iOS/HTMLReader.framework; sourceTree = "<group>"; };
 		3958DFC61B7FBD6F00B1E6A1 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3958DFC91B7FBD6F00B1E6A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3958DFD01B7FBD6F00B1E6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +105,6 @@
 		39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeiseplanDataTypes.swift; sourceTree = "<group>"; };
 		39D51A791B875C63004A62D2 /* KartenserviceDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenserviceDataTypes.swift; sourceTree = "<group>"; };
 		39F30AAE1B8B92B300E6819E /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
-		39F30AAF1B8B92B300E6819E /* HTMLReader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = HTMLReader.framework.dSYM; path = Carthage/Build/iOS/HTMLReader.framework.dSYM; sourceTree = "<group>"; };
 		39F30AB01B8B92B300E6819E /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
 		39F30AB11B8B92B300E6819E /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		39FF769C1B8B697D00576573 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -125,7 +120,6 @@
 			files = (
 				39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */,
 				39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */,
-				3950696B1B8248F2000F87F9 /* HTMLReader.framework in Frameworks */,
 				39FF769D1B8B697D00576573 /* Result.framework in Frameworks */,
 				5DACEFD61A9EF3916E39F12C /* Pods.framework in Frameworks */,
 			);
@@ -265,11 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				39F30AAE1B8B92B300E6819E /* Alamofire.framework.dSYM */,
-				39F30AAF1B8B92B300E6819E /* HTMLReader.framework.dSYM */,
 				39F30AB01B8B92B300E6819E /* Result.framework.dSYM */,
 				39F30AB11B8B92B300E6819E /* SwiftyJSON.framework.dSYM */,
 				39FF769C1B8B697D00576573 /* Result.framework */,
-				3950696A1B8248F2000F87F9 /* HTMLReader.framework */,
 				39C89EB11B801E5700518AB0 /* Alamofire.framework */,
 				39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */,
 				472FBF26ADB42BFFF3E2EBF5 /* Pods.framework */,
@@ -448,7 +440,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/HTMLReader.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = Carthage;
