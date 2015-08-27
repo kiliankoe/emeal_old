@@ -30,6 +30,8 @@
 		39C89EB21B801E5700518AB0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C89EB11B801E5700518AB0 /* Alamofire.framework */; };
 		39CD15DE1B8137FE0065A7CA /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */; };
 		39CD15E01B813AC60065A7CA /* SpeiseplanDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */; };
+		39CE41BF1B8E964B002757C4 /* OSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE41BE1B8E964B002757C4 /* OSM.swift */; settings = {ASSET_TAGS = (); }; };
+		39CE41C11B8E99C5002757C4 /* OSMDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE41C01B8E99C5002757C4 /* OSMDataTypes.swift */; settings = {ASSET_TAGS = (); }; };
 		39D51A7A1B875C63004A62D2 /* KartenserviceDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D51A791B875C63004A62D2 /* KartenserviceDataTypes.swift */; };
 		39F30AB21B8B92B300E6819E /* Alamofire.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AAE1B8B92B300E6819E /* Alamofire.framework.dSYM */; };
 		39F30AB51B8B92B300E6819E /* SwiftyJSON.framework.dSYM in Copy Carthage symbol files */ = {isa = PBXBuildFile; fileRef = 39F30AB11B8B92B300E6819E /* SwiftyJSON.framework.dSYM */; };
@@ -108,6 +110,8 @@
 		39C89EB11B801E5700518AB0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		39CD15DD1B8137FE0065A7CA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeiseplanDataTypes.swift; sourceTree = "<group>"; };
+		39CE41BE1B8E964B002757C4 /* OSM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSM.swift; sourceTree = "<group>"; };
+		39CE41C01B8E99C5002757C4 /* OSMDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMDataTypes.swift; sourceTree = "<group>"; };
 		39D51A791B875C63004A62D2 /* KartenserviceDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenserviceDataTypes.swift; sourceTree = "<group>"; };
 		39F30AAE1B8B92B300E6819E /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
 		39F30AB11B8B92B300E6819E /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				396285CE1B83CB9100A93781 /* Speiseplan.swift */,
 				39A73F6B1B80036C003F561E /* Kartenservice.swift */,
+				39CE41BE1B8E964B002757C4 /* OSM.swift */,
 			);
 			name = Server;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			children = (
 				39CD15DF1B813AC60065A7CA /* SpeiseplanDataTypes.swift */,
 				39D51A791B875C63004A62D2 /* KartenserviceDataTypes.swift */,
+				39CE41C01B8E99C5002757C4 /* OSMDataTypes.swift */,
 			);
 			name = DataTypes;
 			sourceTree = "<group>";
@@ -479,6 +485,8 @@
 				396270DC1B836A89007273A7 /* TransactionCell.swift in Sources */,
 				39987B121B81CDCC00AAB4E4 /* Array+combine.swift in Sources */,
 				396270DE1B836C1F007273A7 /* CanteenTVC.swift in Sources */,
+				39CE41C11B8E99C5002757C4 /* OSMDataTypes.swift in Sources */,
+				39CE41BF1B8E964B002757C4 /* OSM.swift in Sources */,
 				39A73F6C1B80036C003F561E /* Kartenservice.swift in Sources */,
 				3958DFCA1B7FBD6F00B1E6A1 /* AppDelegate.swift in Sources */,
 				39C0C7A51B8E526800F21520 /* MealDetailImageCell.swift in Sources */,

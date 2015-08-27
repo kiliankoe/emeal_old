@@ -30,4 +30,10 @@ struct Constants {
 	static let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
 	static let ksUserDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 	static let ksLoginURL = NSURL(string: "Login.php?ccsForm=Login", relativeToURL: ksBaseURL)!
+
+	// OSM
+	static func osmLookupURL(var name: String) -> NSURL {
+		name = name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+		return NSURL(string: "https://nominatim.openstreetmap.org/search?q=\(name)&format=json&accept-language=de&limit=1&addressdetails=1&extratags=1")!
+	}
 }
