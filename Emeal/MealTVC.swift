@@ -22,7 +22,7 @@ class MealTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		title = meal?.name
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Bookmarks, target: self, action: "openDetailPageInBrowser")
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "globe"), style: .Plain, target: self, action: "openDetailPageInBrowser")
 		dataSource.tableView = tableView
 
 		Speiseplan.mealDetails(forMeal: meal!, completion: { [unowned self] (result) -> Void in
