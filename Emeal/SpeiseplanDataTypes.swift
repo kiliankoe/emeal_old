@@ -9,9 +9,9 @@
 import UIKit
 
 struct Canteen: Equatable {
-	let name: String!
-	let address: String!
-	let coords: (Double, Double)!
+	let name: String
+	let address: String?
+	let coords: (Double, Double)?
 }
 
 func ==(lhs: Canteen, rhs: Canteen) -> Bool {
@@ -22,12 +22,11 @@ func ==(lhs: Canteen, rhs: Canteen) -> Bool {
 }
 
 struct Meal {
-	let id: Int!
-	let name: String!
-//	let category: String!
+	let id: Int
+	let name: String
 	let price: PricePair?
-	var ingredients: [Ingredient]!
-	var allergens: [Allergen]!
+	var ingredients: [Ingredient]
+	var allergens: [Allergen]
 	var imageURL: NSURL?
 	var isSoldOut: Bool
 }
@@ -41,7 +40,6 @@ enum Ingredient:String {
 	case Pork = "Menü enthält Schweinefleisch"
 	case Beef = "Menü enthält Rindfleisch"
 	case Garlic = "Menü enthält Knoblauch"
-//	case Gelantine = "Menü enthält Gelantine"
 }
 
 enum Allergen: String {

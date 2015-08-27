@@ -163,8 +163,8 @@ class Kartenservice {
 					chargeAmount		= controls?[4].xPath("td[2]/input").first!["value"],
 					limitAmount			= controls?[5].xPath("td[2]/input").first!["value"]
 				{
-					let cardNumber = Int(cardNumberString)
-					let bankCode = Int(bankCodeString)
+					let cardNumber = Int(cardNumberString)!
+					let bankCode = Int(bankCodeString)!
 					let userData = KSUserData(cardNumber: cardNumber, message: message, bankCode: bankCode, bankAccountNumber: bankAccountNumber, chargeAmount: readPrice(chargeAmount), limitAmount: readPrice(limitAmount))
 					completion(userdata: userData, error: nil)
 					return
