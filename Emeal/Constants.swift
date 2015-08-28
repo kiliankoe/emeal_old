@@ -28,6 +28,7 @@ struct Constants {
 	// Kartenservice
 	static let ksBaseURL = NSURL(string: "https://kartenservice.studentenwerk-dresden.de/KartenService/")!
 	static let ksTransactionsURL = NSURL(string: "Transaktionen.php", relativeToURL: ksBaseURL)!
+//	static let ksTransactionsURL = NSURL(string: "http://wwwpub.zih.tu-dresden.de/~s9996933/Transaktionen.html")!
 	static let ksUserDataURL = NSURL(string: "KartenDaten.php", relativeToURL: ksBaseURL)!
 	static let ksLoginURL = NSURL(string: "Login.php?ccsForm=Login", relativeToURL: ksBaseURL)!
 

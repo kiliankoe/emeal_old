@@ -6,6 +6,13 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>wwwpub.zih.tu-dresden.de</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>parallelnetz.de</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
