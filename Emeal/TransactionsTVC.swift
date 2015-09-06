@@ -59,7 +59,7 @@ class TransactionsTVC: UITableViewController {
 		cell.canteenLabel.text = thisTransaction.location
 		cell.timestampLabel.text = timestampDateFormatter.stringFromDate(thisTransaction.date)
 
-		switch thisTransaction.type! {
+		switch thisTransaction.type {
 		case .Article:
 			let price = NSString(format: "-%.2f€", thisTransaction.totalPrice)
 			cell.priceLabel.text = price as String

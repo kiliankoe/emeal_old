@@ -67,9 +67,9 @@ class Speiseplan {
 					let canteen: Canteen
 					if canteenName == "BioMensa U-Boot (Bio-Code-Nummer: DE-ÖKO-021)" {
 						// There always has to be a special snowflake somewhere...
-						canteen = Canteen(name: "BioMensa U-Boot", address: "", coords: (1.0, 1.0))
+						canteen = Canteen(name: "BioMensa U-Boot")
 					} else {
-						canteen = Canteen(name: canteenName, address: "", coords: (1.0, 1.0))
+						canteen = Canteen(name: canteenName)
 					}
 
 					self.savedCanteens.append(canteen)

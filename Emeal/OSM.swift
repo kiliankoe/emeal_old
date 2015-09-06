@@ -25,7 +25,8 @@ class OSM {
 			guard let data = result.value else { completion(.Failure(.Server)); return }
 
 			let json = JSON(data)
-			print(json[0]["extratags"]["drink:club-mate"])
+			completion(.Success(OSMData(json)))
+			// Well that turned out a lot simpler than expected...
 		}
 	}
 }

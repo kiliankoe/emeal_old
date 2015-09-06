@@ -21,6 +21,7 @@ class CanteenTVC: UITableViewController {
         super.viewDidLoad()
 
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "update")
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "reloadData")
 
 		update()
 
@@ -35,14 +36,17 @@ class CanteenTVC: UITableViewController {
 //		}
     }
 
+	func reloadData() {
+		tableView.reloadData()
+		print(canteens[3])
+	}
+
 	func update() {
-		spToday.updateFromWebsite { (error) -> Void in
+		spToday.updateFromWebsite { [unowned self] (error) -> Void in
 			if let error = error { print(error); return }
-			do {
-				self.canteens = try self.spToday.canteens()
-			} catch let error {
-				print(error)
-			}
+
+			self.canteens = try! self.spToday.canteens()
+
 			self.tableView.reloadData()
 			self.tableView.flashScrollIndicators()
 		}

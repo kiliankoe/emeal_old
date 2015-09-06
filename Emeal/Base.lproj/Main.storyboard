@@ -29,8 +29,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Geöffnet (11:00 - 15:00 Uhr)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LF7-tS-A8l">
-                                            <rect key="frame" x="88" y="25.5" width="148.5" height="13.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Öffnungszeiten werden geladen..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LF7-tS-A8l">
+                                            <rect key="frame" x="88" y="25.5" width="177" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.094410337507724762" green="0.51380527019500732" blue="0.67649739980697632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

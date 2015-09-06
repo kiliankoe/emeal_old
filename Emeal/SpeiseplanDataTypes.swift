@@ -10,8 +10,6 @@ import UIKit
 
 struct Canteen: Equatable {
 	let name: String
-	let address: String?
-	let coords: (Double, Double)?
 }
 
 func ==(lhs: Canteen, rhs: Canteen) -> Bool {
