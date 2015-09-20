@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  URL.swift
 //  Emeal
 //
 //  Created by Kilian Költzsch on 17/08/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Constants {
+struct URL {
 	// Speiseplan
 	static let spMainURL = NSURL(string: "https://www.studentenwerk-dresden.de/mensen/speiseplan/")!
 	static let spMainTomorrowURL = NSURL(string: "morgen.html", relativeToURL: spMainURL)!

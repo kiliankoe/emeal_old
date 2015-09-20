@@ -79,7 +79,7 @@ class MealTVC: UITableViewController {
     }
 
 	func openDetailPageInBrowser() {
-		UIApplication.sharedApplication().openURL(Constants.spDetailURL(meal!.id))
+		UIApplication.sharedApplication().openURL(URL.spDetailURL(meal!.id))
 	}
 
     // MARK: - Table view data source

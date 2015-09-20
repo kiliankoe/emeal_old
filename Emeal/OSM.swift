@@ -18,7 +18,7 @@ enum OSMError: ErrorType {
 class OSM {
 	static func lookup(name: String, completion: (OSMResult<OSMData,OSMError>) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		Alamofire.request(.GET, Constants.osmLookupURL(name)).responseJSON { (_, res, result) -> Void in
+		Alamofire.request(.GET, URL.osmLookupURL(name)).responseJSON { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(.Failure(.Request)); return }
 			guard res.statusCode == 200 else { completion(.Failure(.Request)); return }

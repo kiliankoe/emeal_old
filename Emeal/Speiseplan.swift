@@ -33,8 +33,8 @@ class Speiseplan {
 	var savedMeals = [String: [Meal]]()
 	var lastUpdated = NSDate()
 
-	static let today = Speiseplan(url: Constants.spMainURL)
-	static let tomorrow = Speiseplan(url: Constants.spMainTomorrowURL)
+	static let today = Speiseplan(url: URL.spMainURL)
+	static let tomorrow = Speiseplan(url: URL.spMainTomorrowURL)
 
 	init(url: NSURL) {
 		self.spURL = url
@@ -140,7 +140,7 @@ class Speiseplan {
 	*/
 	static func mealDetails(var forMeal meal: Meal, completion: (SPResult<Meal, SpeiseplanError>) -> Void) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		Alamofire.request(.GET, Constants.spDetailURL(meal.id)).responseData { (_, res, result) -> Void in
+		Alamofire.request(.GET, URL.spDetailURL(meal.id)).responseData { (_, res, result) -> Void in
 			defer { UIApplication.sharedApplication().networkActivityIndicatorVisible = false }
 			guard let res = res else { completion(.Failure(.Request)); return }
 			guard res.statusCode == 200 else { completion(.Failure(SpeiseplanError.Server)); return }
