@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		391BC2921EE840CE007F8E6F /* Emeal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Emeal.entitlements; sourceTree = "<group>"; };
 		39ABB1341EE8269F00774F78 /* Emeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39ABB1371EE8269F00774F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39ABB1391EE8269F00774F78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		39ABB1361EE8269F00774F78 /* Emeal */ = {
 			isa = PBXGroup;
 			children = (
+				391BC2921EE840CE007F8E6F /* Emeal.entitlements */,
 				39ABB1371EE8269F00774F78 /* AppDelegate.swift */,
 				39ABB1391EE8269F00774F78 /* ViewController.swift */,
 				39ABB13B1EE8269F00774F78 /* Main.storyboard */,
@@ -312,6 +314,7 @@
 				39ABB1481EE8269F00774F78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
