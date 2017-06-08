@@ -11,11 +11,14 @@ import CoreNFC
 
 class ViewController: UIViewController {
 
+    var readerSession: NFCNDEFReaderSession? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        let _ = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+        readerSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+        readerSession?.begin()
     }
 }
 
